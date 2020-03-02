@@ -27,28 +27,28 @@ Field:
 -Third argument takes  one `Field` value. Needed for returned data to be ordered according to the `Field` value<br />
 -Fourth argument decides on which format the data to be returned in. Either in `HTML` or `JSON`. Default: "json"<br />
 
--`Field` 는 arcGIS REST API 에서 field 값 자료 데이블을 탐색하기 위해 쓰입니다.
--첫 argument 는 `SQL`의 `WHERE` 구문과 같습니다. 테이블을 쿼리하기 위해 쓰입니다. `Field` 값과 그에 알맞는 값이 필요합니다. 
--두번째 argument 는 하나 이상의 `Field` 값을 갖습니다. 어떤 `Field` 값을 반환할 지 정해줍니다. 기본 값 "*"(전체) 
--세번째 argument 는 하나의 `Field` 값을 갖습니다. 반환 된 값의 순서를 정해줍니다. 
--네번째 argument 는 반환 될 값의 포맷을 정해줍니다. `HTML` 아니면 `JSON` 둘중 하나 입니다. 기본 값: "json"
+-`Field` 는 arcGIS REST API 에서 field 값 자료 데이블을 탐색하기 위해 쓰입니다.<br />
+-첫 argument 는 `SQL`의 `WHERE` 구문과 같습니다. 테이블을 쿼리하기 위해 쓰입니다. `Field` 값과 그에 알맞는 값이 필요합니다. <br />
+-두번째 argument 는 하나 이상의 `Field` 값을 갖습니다. 어떤 `Field` 값을 반환할 지 정해줍니다. 기본 값 "*"(전체) <br />
+-세번째 argument 는 하나의 `Field` 값을 갖습니다. 반환 된 값의 순서를 정해줍니다. <br />
+-네번째 argument 는 반환 될 값의 포맷을 정해줍니다. `HTML` 아니면 `JSON` 둘중 하나 입니다. 기본 값: "json"<br />
 
 
 * Example / 예시
 ```
 python3 covid19.py "Confirmed > 0" "*" "Confirmed" "json"
 ```
-This searches for Values with more than 0 Confirmed cases and returns all `Field` values with it.
-Returns in JSON format in order from least to most Confirmed cases.
+This searches for Values with more than 0 Confirmed cases and returns all `Field` values with it.<br /><br />
+Returns in JSON format in order from least to most Confirmed cases.<br />
 
-Documents about ArcGIS FeatureService Rest API can be found here:
-[ArcGIS-FeatureService](https://developers.arcgis.com/rest/services-reference/feature-service.htm)
-[ArcGIS-FeatureService(Layer)](https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm)
+Documents about ArcGIS FeatureService Rest API can be found here:<br />
+[ArcGIS-FeatureService](https://developers.arcgis.com/rest/services-reference/feature-service.htm)<br />
+[ArcGIS-FeatureService(Layer)](https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm)<br />
 
 
 ### JSON data
- Data scraped from the API is returned in JSON format into `covid_dat.json` file.
- API 에서 크롤된 자료는 `covid_dat.json` 파일에 반환됩니다.
+ Data scraped from the API is returned in JSON format into `covid_dat.json` file.<br /><br />
+ API 에서 크롤된 자료는 `covid_dat.json` 파일에 반환됩니다.<br />
 
 ## Built With/사용된 파이썬 모듈
 * [Python3](https://www.python.org/doc)
