@@ -72,7 +72,7 @@ class CovidInfowd:
         
     def show(self):
         json_dump = self.return_wd_dat()
-        att = json_dump["features"]["attributes"]
+        att = json_dump["features"]
         
         print(att)
         

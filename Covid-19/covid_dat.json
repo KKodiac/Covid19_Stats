@@ -914,22 +914,6 @@
         },
         {
             "attributes": {
-                "Confirmed": 84,
-                "Country_Region": "Spain",
-                "Deaths": 0,
-                "Last_Update": 1583105583000,
-                "Lat": 40,
-                "Long_": -4,
-                "OBJECTID": 34,
-                "Recovered": 2
-            },
-            "geometry": {
-                "x": -3.999999999999943,
-                "y": 40.00000000000006
-            }
-        },
-        {
-            "attributes": {
                 "Confirmed": 86,
                 "Country_Region": "US",
                 "Deaths": 2,
@@ -978,18 +962,18 @@
         },
         {
             "attributes": {
-                "Confirmed": 130,
-                "Country_Region": "Germany",
+                "Confirmed": 120,
+                "Country_Region": "Spain",
                 "Deaths": 0,
-                "Last_Update": 1583104982000,
-                "Lat": 51,
-                "Long_": 9,
-                "OBJECTID": 25,
-                "Recovered": 16
+                "Last_Update": 1583160185000,
+                "Lat": 40,
+                "Long_": -4,
+                "OBJECTID": 34,
+                "Recovered": 2
             },
             "geometry": {
-                "x": 9.000000000000057,
-                "y": 51.00000000000006
+                "x": -3.999999999999943,
+                "y": 40.00000000000006
             }
         },
         {
@@ -1010,6 +994,22 @@
         },
         {
             "attributes": {
+                "Confirmed": 150,
+                "Country_Region": "Germany",
+                "Deaths": 0,
+                "Last_Update": 1583160185000,
+                "Lat": 51,
+                "Long_": 9,
+                "OBJECTID": 25,
+                "Recovered": 16
+            },
+            "geometry": {
+                "x": 9.000000000000057,
+                "y": 51.00000000000006
+            }
+        },
+        {
+            "attributes": {
                 "Confirmed": 256,
                 "Country_Region": "Japan",
                 "Deaths": 6,
@@ -1026,10 +1026,10 @@
         },
         {
             "attributes": {
-                "Confirmed": 706,
+                "Confirmed": 705,
                 "Country_Region": "Others",
                 "Deaths": 6,
-                "Last_Update": 1583155383000,
+                "Last_Update": 1583159583000,
                 "Lat": 35.4437,
                 "Long_": 139.638,
                 "OBJECTID": 13,
