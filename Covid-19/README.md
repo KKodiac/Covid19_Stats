@@ -1,17 +1,17 @@
 # `covid19.py`
-코로나-19 에 대한 확진/완치/사망 에 대한 국내, 해외 정보를 수집합니다. \n
+코로나-19 에 대한 확진/완치/사망 에 대한 국내, 해외 정보를 수집합니다. <br />
 Data scrapes Covid-19 Confirmed/Cured/Deceases Cases.
-
+<br />
 ## Covid19 Korea Data / 코로나 한국 자료
 - `bs4` 를 활용하여 간단한 크롤러로 질병관리본부(KCDC)에 있는 환자 현황을 크롤합니다.
 - Using `bs4`, scrapes Korea CDC(KCDC) page for current status of Covid-19 in Korea.
 
 ## Covid19 World Data
 - [CSSEGISandData/CODIV-19](https://github.com/CSSEGISandData/COVID-19) 에서 사용 중인 ArcGIS API를 활용합니다.
-- 
+
 ### Try it out
-Submit arguments of what you what to Search
-찾고싶은 사항에 대해서 arguments 로 입력하세요
+Submit arguments of what you what to Search<br />
+찾고싶은 사항에 대해서 arguments 로 입력하세요<br />
 ```
 Field: 
     "OBJECTID",
@@ -21,17 +21,17 @@ Field:
     "DEATHS",
     "RECOVERED"
 ```
-`Field` is query label used to search in the ArcGIS data table of the field value.
-First argument takes one `Field` value. Same as `WHERE` in `sql`
-Second argument takes more than one `Field` value. Needed for deciphering which `Field` data to return. Default: "*"(ALL)
-Third argument takes  one `Field` value. Needed for returned data to be ordered according to the `Field` value
-Fourth argument decides on which format the data to be returned in. Either in `HTML` or `JSON`. Default: "json"
+`Field` is query label used to search in the ArcGIS data table of the field value.<br />
+-First argument takes one `Field` value. Same as `WHERE` in `sql`<br />
+-Second argument takes more than one `Field` value. Needed for deciphering which `Field` data to return. Default: "*"(ALL)<br />
+-Third argument takes  one `Field` value. Needed for returned data to be ordered according to the `Field` value<br />
+-Fourth argument decides on which format the data to be returned in. Either in `HTML` or `JSON`. Default: "json"<br />
 
-`Field` 는 arcGIS REST API 에서 field 값 자료 데이블을 탐색하기 위해 쓰입니다.
-첫 argument 는 `SQL`의 `WHERE` 구문과 같습니다. 테이블을 쿼리하기 위해 쓰입니다. `Field` 값과 그에 알맞는 값이 필요합니다. 
-두번째 argument 는 하나 이상의 `Field` 값을 갖습니다. 어떤 `Field` 값을 반환할 지 정해줍니다. 기본 값 "*"(전체) 
-세번째 argument 는 하나의 `Field` 값을 갖습니다. 반환 된 값의 순서를 정해줍니다. 
-네번째 argument 는 반환 될 값의 포맷을 정해줍니다. `HTML` 아니면 `JSON` 둘중 하나 입니다. 기본 값: "json"
+-`Field` 는 arcGIS REST API 에서 field 값 자료 데이블을 탐색하기 위해 쓰입니다.
+-첫 argument 는 `SQL`의 `WHERE` 구문과 같습니다. 테이블을 쿼리하기 위해 쓰입니다. `Field` 값과 그에 알맞는 값이 필요합니다. 
+-두번째 argument 는 하나 이상의 `Field` 값을 갖습니다. 어떤 `Field` 값을 반환할 지 정해줍니다. 기본 값 "*"(전체) 
+-세번째 argument 는 하나의 `Field` 값을 갖습니다. 반환 된 값의 순서를 정해줍니다. 
+-네번째 argument 는 반환 될 값의 포맷을 정해줍니다. `HTML` 아니면 `JSON` 둘중 하나 입니다. 기본 값: "json"
 
 
 * Example / 예시
