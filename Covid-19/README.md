@@ -66,4 +66,4 @@ Documents about ArcGIS FeatureService Rest API can be found here:<br />
 * World data scraped from - *github repo* - [Covid-19](https://github.com/CSSEGISandData/COVID-19) - [Service](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer)
 * Korea data scraped from [질병관리본부(Korea CDC)](http://ncov.mohw.go.kr/index_main.jsp)
 
-## Any problems please contact me at `seanhong2000@gmail.com`
+### Any problems please contact me at [seanhong2000@gmail.com](seanhong2000@gmail.com)
