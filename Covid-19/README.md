@@ -21,13 +21,13 @@ Field:
     "DEATHS",
     "RECOVERED"
 ```
-`Field` is query label used to search in the ArcGIS data table of the field value.<br />
+`Field` is query label used to search in the ArcGIS data table of the field value.<br /><br />
 -First argument takes one `Field` value. Same as `WHERE` in `sql`<br />
 -Second argument takes more than one `Field` value. Needed for deciphering which `Field` data to return. Default: "*"(ALL)<br />
 -Third argument takes  one `Field` value. Needed for returned data to be ordered according to the `Field` value<br />
 -Fourth argument decides on which format the data to be returned in. Either in `HTML` or `JSON`. Default: "json"<br />
 
--`Field` 는 arcGIS REST API 에서 field 값 자료 데이블을 탐색하기 위해 쓰입니다.<br />
+-`Field` 는 arcGIS REST API 에서 field 값 자료 데이블을 탐색하기 위해 쓰입니다.<br /><br />
 -첫 argument 는 `SQL`의 `WHERE` 구문과 같습니다. 테이블을 쿼리하기 위해 쓰입니다. `Field` 값과 그에 알맞는 값이 필요합니다. <br />
 -두번째 argument 는 하나 이상의 `Field` 값을 갖습니다. 어떤 `Field` 값을 반환할 지 정해줍니다. 기본 값 "*"(전체) <br />
 -세번째 argument 는 하나의 `Field` 값을 갖습니다. 반환 된 값의 순서를 정해줍니다. <br />
@@ -36,7 +36,8 @@ Field:
 
 * Example / 예시
 ```
-python3 covid19.py "Confirmed > 0" "*" "Confirmed" "json"
+python3 covid19.py [label: 0,1,2] [where: FIELD_VAR] [return_value: FIELD_VAR] [order_by: FIELD_VAR] [format: 'json' or 'html']
+python3 covid19.py 2 "Confirmed > 0" "*" "Confirmed" "json"
 ```
 This searches for Values with more than 0 Confirmed cases and returns all `Field` values with it.<br /><br />
 Returns in JSON format in order from least to most Confirmed cases.<br />

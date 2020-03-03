@@ -44,7 +44,7 @@ label_casses = 1
 label_country = 2
 
 class CovidInfowd:
-    def __init__(self, label, wfield="", ofield="*", orderfield="",fformat="json"):
+    def __init__(self, label=2, wfield="", ofield="*", orderfield="",fformat="json"):
         self.label = label
         self.wfield = wfield
         self.ofield= ofield
@@ -75,5 +75,6 @@ class CovidInfowd:
         att = json_dump["features"]
         
         print(att)
+        
         
         

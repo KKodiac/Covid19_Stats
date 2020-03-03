@@ -24,7 +24,7 @@ if __name__ == '__main__':
     covid = covid19_kr.CovidInfokr(0)
     status = covid.covid_get_data_kr()
     print(f"확진자:{status[0]}, 완치:{status[1]}, 사망:{status[2]}\n")
-    print(f"Confirmed : {status[0]}, Recovered : {status[1]}, Deceased : {status[2]}\n\n\n\n\n\n\n\n")
+    print(f"Confirmed : {status[0]}, Recovered : {status[1]}, Deceased : {status[2]}\n\n\n\n\n")
     
     
     print("---세계 코로나 현황을 보여줍니다---\n") 
@@ -33,14 +33,11 @@ if __name__ == '__main__':
     print("---Showing World Covid-19 Status---\n")
     print("---In order to view the status in json format, see covid_dat.json file.\n")
     
-    print("")
-    
+
     
     args = [sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]]
     
     Covid = covid19_wd.CovidInfowd(args[0], args[1], args[2], args[3], args[4])
     
     Covid.show()
-    # covidwd_all = covid19_wd.CovidInfowd(2, "Confirmed > 0", "*", "Confirmed")
-    # covidwd.return_wd_dat()
-    # covidwd.show()
+
