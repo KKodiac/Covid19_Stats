@@ -33,7 +33,7 @@ if __name__ == '__main__':
     print("---Showing World Covid-19 Status---\n")
     print("---In order to view the status in json format, see covid_dat.json file.\n")
     
-
+    print("*** INPUT FORMAT: ARG1=LABEL[0,1,2] ARG2=FIELDVAR+[><=]+NUMVAR ARG3:FIELDVARS ARG4:FIELDVAR ARG5:FORMAT ***")
     
     args = [sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4], sys.argv[5]]
     
