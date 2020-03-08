@@ -44,12 +44,12 @@ label_casses = 1
 label_country = 2
 
 class CovidInfowd:
-    def __init__(self, label=2, wfield="", ofield="*", orderfield="",fformat="json"):
-        self.label = label
-        self.wfield = wfield
-        self.ofield= ofield
-        self.orderfield = orderfield
-        self.fformat = fformat
+    def __init__(self):
+        self.label = 2
+        self.wfield = "Confirmed>0"
+        self.ofield= "*"
+        self.orderfield = "OBJECTID"
+        self.fformat = "json"
     
     def covid_get_data(self):
         slink = service_link.format(self.label)
@@ -79,7 +79,7 @@ class CovidInfowd:
         
     def jsontocsv(self):
         inputFile = open("covid_dat.json")
-        outputFile = open("covid_dat.csv", 'w+')
+        outputFile = open("Data/covid_dat.csv", 'w+')
         data = json.load(inputFile)
         inputFile.close()
         output = csv.writer(outputFile)

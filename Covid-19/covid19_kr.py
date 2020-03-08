@@ -41,7 +41,7 @@ class CovidInfokr:
         ct, rg = self.return_kr_dat()
         ct_json = json.loads(ct.text)
         rg_json = json.loads(rg.text)
-        print(rg_json['idr'][0]['SEOUL'].keys())
+        
         region_kr = [
             'SEOUL',    # 0
             'BUSAN',    # 1
@@ -61,23 +61,23 @@ class CovidInfokr:
             'GYEONGNAM', # 15
             'JEJU',      # 16
         ]
-        with open('covid_dat_kr.csv', "w+") as file:
+        with open('Data/covid_dat_kr_total.csv', 'w+') as file:
             df = csv.writer(file)
             df.writerow(['General Korean Situation (Covid-19)'])
             stats = ['Confirmed', 'Recovered','Deceased', 'Investigated']
             df.writerow(stats)
             df.writerow(ct_json['info'].values())
-            df.writerow('')
             
+            file.close()
+            
+        with open('Data/covid_dat_kr.csv', "w+") as file:
+            df = csv.writer(file)
             for cnt, region in enumerate(region_kr):
                 data = rg_json['idr'][cnt][region]
                 data['Region'] = region
-                print(data.keys(), data.values())
-                df.writerow(data.keys())
                 
+                if(cnt==0):df.writerow(data.keys())
                 df.writerow(data.values())
-                  
-                
             
             
             file.close()
