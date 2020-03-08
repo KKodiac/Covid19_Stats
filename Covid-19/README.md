@@ -4,9 +4,9 @@ Data scrapes Covid-19 Confirmed/Cured/Deceases Cases.
 
 ## Contents 
 
-* [Korea - Covid-19 Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/covid_dat_kr.csv)
+* [Korea - Covid-19 Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/Data/covid_dat_kr.csv)
 
-* [World - Covid-19 Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/covid_dat.csv)
+* [World - Covid-19 Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/Data/covid_dat.csv)
 
 ### Covid19 Korea Data / 코로나 한국 자료 
 
