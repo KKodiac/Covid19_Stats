@@ -1,22 +1,28 @@
 # `covid19.py`
 코로나-19 에 대한 확진/완치/사망 에 대한 국내, 해외 정보를 수집합니다. <br />
 Data scrapes Covid-19 Confirmed/Cured/Deceases Cases.
+
 ## Contents 
 
+* [Korea - Covid-19 Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/covid_dat_kr.csv)
+
+* [World - Covid-19 Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/covid_dat.csv)
+
+### Covid19 Korea Data / 코로나 한국 자료 
 <br />
-## Covid19 Korea Data / 코로나 한국 자료
-[zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API) 에서 제공하신 국내 동향 조회 API를 활용합니다. <br />  
-[Documentaion on above API](https://ncov.zeroday0619.kr/redoc) <br />
-[KCDC - 대한민국 질병관리 본부](http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&) API에서 크롤링 한 국내 자료 입니다. <br />  
-By following the link above, you can view the entire situation in Korea. There are also links provided by Korean Local Governments on the lower side of the page.
+* [zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API) 에서 제공하신 국내 동향 조회 API를 활용합니다. <br />  
+-[Documentaion on above API](https://ncov.zeroday0619.kr/redoc) <br />
+* [KCDC - 대한민국 질병관리 본부](http://ncov.mohw.go.kr/bdBoardList_Real.do?) API에서 크롤링 한 국내 자료 입니다. <br />  
+-By following the link above, you can view the entire situation in Korea. There are also links provided by Korean Local Governments on the lower side of the page.
 There are up-to-date situation reports about each individual local government. <br />  
-위에 링크를 활용하면 각 시도에서 제공하는 지역별 코로나 현황을 볼 수 있습니다. 대한민국 짱
+-위에 링크를 활용하면 각 시도에서 제공하는 지역별 코로나 현황을 볼 수 있습니다. 대한민국 짱 <br />  
 
-<br />  
-## Covid19 World Data
-- [CSSEGISandData/CODIV-19](https://github.com/CSSEGISandData/COVID-19) 에서 사용 중인 ArcGIS API를 활용합니다.
+### Covid19 World Data
+<br />
+* [CSSEGISandData/CODIV-19](https://github.com/CSSEGISandData/COVID-19) 에서 사용 중인 ArcGIS API를 활용합니다.
 
-### Try it out
+#### Try it out
+<br />
 Submit arguments of what you what to Search<br />
 찾고싶은 사항에 대해서 arguments 로 입력하세요<br />
 ```
@@ -55,21 +61,25 @@ Documents about ArcGIS FeatureService Rest API can be found here:<br />
 
 
 ### JSON data
+<br />
  Data scraped from the API is returned in JSON format into `covid_dat.json` file.<br /><br />
  API 에서 크롤된 자료는 `covid_dat.json` 파일에 반환됩니다.<br />
  이 후 `covid_dat.csv` 파일로 정리 됩니다.
 ## Built With/사용된 파이썬 모듈
+<br />
 * [Python3](https://www.python.org/doc)
 - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
 - [Requests](https://requests.readthedocs.io/en/master/)
 
 ## Authors
+<br />
 
 * **Sean Hong(홍성민)** 
 * 현재 군인 현역으로 있는 학생이기 때문에 많이 부족합니다. 보완점을 가르쳐주시면 감사하겠습니다!
 * Any lacking parts in my code are welcome to any suggestions and criticism.
 
 ## Acknowledgments
+<br />
 
 * World data scraped from - *github repo* - [Covid-19](https://github.com/CSSEGISandData/COVID-19) - [Service](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer)
 * Korea data scraped from [질병관리본부(Korea CDC)](http://ncov.mohw.go.kr/index_main.jsp)
