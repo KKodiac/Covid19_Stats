@@ -66,30 +66,27 @@ class CovidInfowd:
         data = self.covid_get_data()
         dumped = json.loads(data)
         with open("covid_dat.json", "w+") as file:
-            json.dump(dumped, file, sort_keys=True, indent=4)
+            json.dump(dumped['features'], file, sort_keys=True, indent=4)
             
         return dumped 
         
     def show(self):
         json_dump = self.return_wd_dat()
-        att = json_dump["features"]
-        
-        print(att)
+        data = json_dump["features"]
+        for row in data:
+            print(row['attributes'])
         
         
     def jsontocsv(self):
+        inputFile = open("covid_dat.json")
+        outputFile = open("covid_dat.csv", 'w+')
+        data = json.load(inputFile)
+        inputFile.close()
+        output = csv.writer(outputFile)
+        # print(data['features'])
+        output.writerow(data[0]['attributes'])
+        print(data[0]['attributes'].values())
+        # output.writerow(data[0].keys())
+        for row in data:
+            output.writerow(row['attributes'].values())
             
-        #if you are not using utf-8 files, remove the next line
-        sys.setdefaultencoding("UTF-8") #set the encode to utf8
-        #check if you pass the input file and output file
-        if sys.argv[1] is not None and sys.argv[2] is not None:
-            fileInput = sys.argv[1]
-            fileOutput = sys.argv[2]
-            inputFile = open(fileInput) #open json file
-            outputFile = open(fileOutput, 'w') #load csv file
-            data = json.load(inputFile) #load json content
-            inputFile.close() #close the input file
-            output = csv.writer(outputFile) #create a csv.write
-            output.writerow(data[0].keys())  # header row
-            for row in data:
-                output.writerow(row.values()) #values row

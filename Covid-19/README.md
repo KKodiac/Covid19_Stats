@@ -1,11 +1,18 @@
 # `covid19.py`
 코로나-19 에 대한 확진/완치/사망 에 대한 국내, 해외 정보를 수집합니다. <br />
 Data scrapes Covid-19 Confirmed/Cured/Deceases Cases.
+## Contents 
+
 <br />
 ## Covid19 Korea Data / 코로나 한국 자료
-- `bs4` 를 활용하여 간단한 크롤러로 질병관리본부(KCDC)에 있는 환자 현황을 크롤합니다.
-- Using `bs4`, scrapes Korea CDC(KCDC) page for current status of Covid-19 in Korea.
+[zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API) 에서 제공하신 국내 동향 조회 API를 활용합니다. <br />  
+[Documentaion on above API](https://ncov.zeroday0619.kr/redoc) <br />
+[KCDC - 대한민국 질병관리 본부](http://ncov.mohw.go.kr/bdBoardList_Real.do?brdId=1&) API에서 크롤링 한 국내 자료 입니다. <br />  
+By following the link above, you can view the entire situation in Korea. There are also links provided by Korean Local Governments on the lower side of the page.
+There are up-to-date situation reports about each individual local government. <br />  
+위에 링크를 활용하면 각 시도에서 제공하는 지역별 코로나 현황을 볼 수 있습니다. 대한민국 짱
 
+<br />  
 ## Covid19 World Data
 - [CSSEGISandData/CODIV-19](https://github.com/CSSEGISandData/COVID-19) 에서 사용 중인 ArcGIS API를 활용합니다.
 
@@ -50,7 +57,7 @@ Documents about ArcGIS FeatureService Rest API can be found here:<br />
 ### JSON data
  Data scraped from the API is returned in JSON format into `covid_dat.json` file.<br /><br />
  API 에서 크롤된 자료는 `covid_dat.json` 파일에 반환됩니다.<br />
-
+ 이 후 `covid_dat.csv` 파일로 정리 됩니다.
 ## Built With/사용된 파이썬 모듈
 * [Python3](https://www.python.org/doc)
 - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
