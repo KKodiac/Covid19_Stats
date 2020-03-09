@@ -1,5 +1,3 @@
-import requests
-from bs4 import BeautifulSoup as bs4
 import argparse, sys
 import covid19_kr, covid19_wd
 

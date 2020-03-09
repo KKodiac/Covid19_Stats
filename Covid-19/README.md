@@ -2,11 +2,14 @@
 코로나-19 에 대한 확진/완치/사망 에 대한 국내, 해외 정보를 수집합니다. <br />
 Data scrapes Covid-19 Confirmed/Cured/Deceases Cases.
 
-## Contents 
+## Contents - Daily Stat Records(Starting from 2020-03-09)
 
-* [Korea - Covid-19 Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/Data/covid_dat_kr.csv)
+* Time recording is based on UTC (+0900 for KST)
+* 자료 파일의 시간은 UTC 기준입니다.(UTC+0900가 한국기준시 입니다.)
 
-* [World - Covid-19 Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/Data/covid_dat.csv)
+* [Korea - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/Data/covid_dat_kr.csv)
+
+* [World - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/Data/covid_dat.csv)
 
 ### Covid19 Korea Data / 코로나 한국 자료 
 
@@ -85,5 +88,5 @@ Documents about ArcGIS FeatureService Rest API can be found here:<br />
 
 * World data scraped from - *github repo* - [Covid-19](https://github.com/CSSEGISandData/COVID-19) - [Service](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer)
 * Korea data scraped from [질병관리본부(Korea CDC)](http://ncov.mohw.go.kr/index_main.jsp) and [zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API/)
-
+* 
 ### Any problems please contact me at [seanhong2000@gmail.com](seanhong2000@gmail.com)

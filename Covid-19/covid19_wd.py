@@ -23,12 +23,10 @@ Query Note:
     orderByFields: "Fields-value%value"
     
 """
-
+import requests
 import csv, json, sys
 from os import path
-import json 
-import requests
-
+from time import time, ctime
 service_link = "https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer/{}/"
 query_syn = "query?f={}&where={}&outFields={}&orderByFields={}"
 
@@ -78,8 +76,9 @@ class CovidInfowd:
         
         
     def jsontocsv(self):
+        c_date = ctime(time())
         inputFile = open("covid_dat.json")
-        outputFile = open("Data/covid_dat.csv", 'w+')
+        outputFile = open(f"Data/covid_dat_{c_date}.csv", 'w+')
         data = json.load(inputFile)
         inputFile.close()
         output = csv.writer(outputFile)

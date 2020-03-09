@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup as bs4
 from os import path
 import json, csv
+from time import time, ctime
 """
     API provide by : https://ncov.zeroday0619.kr/
     sub url : {status}/{region}/{location}
@@ -61,7 +62,9 @@ class CovidInfokr:
             'GYEONGNAM', # 15
             'JEJU',      # 16
         ]
-        with open('Data/covid_dat_kr_total.csv', 'w+') as file:
+        c_date = ctime(time())
+        
+        with open(f'Data/covid_dat_kr_total_{c_date}.csv', 'w+') as file:
             df = csv.writer(file)
             df.writerow(['General Korean Situation (Covid-19)'])
             stats = ['Confirmed', 'Recovered','Deceased', 'Investigated']
@@ -71,7 +74,7 @@ class CovidInfokr:
             
             file.close()
             
-        with open('Data/covid_dat_kr.csv', "w+") as file:
+        with open(f'Data/covid_dat_kr_{c_date}.csv', "w+") as file:
             df = csv.writer(file)
             for cnt, region in enumerate(region_kr):
                 print(rg_json)
