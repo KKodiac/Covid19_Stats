@@ -17,11 +17,11 @@ import covid19_kr, covid19_wd
     
 
 if __name__ == '__main__':
-    covidkr = covid19_kr.CovidInfokr()
-    Covidwd = covid19_wd.CovidInfowd()
-    status = covidkr.covid_get_data_kr()
-    
+    covidkr = covid19_kr.CovidInfokr() # Korean Stats for Covid-19
+    Covidwd = covid19_wd.CovidInfowd() # World Stats for Covid-19
+    status = covidkr.covid_get_data_kr() 
+    Covidwd.jsontocsv()
     
     # Covidwd.show() # terminal output
-    Covidwd.jsontocsv()
+    
 
