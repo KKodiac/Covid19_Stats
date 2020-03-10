@@ -70,7 +70,8 @@ class CovidInfokr:
             stats = ['Confirmed', 'Recovered','Deceased', 'Investigated']
             df.writerow(stats)
             print(ct_json)
-            df.writerow(ct_json['krstatus'].values())
+            print(ct_json['krstatus'][0])
+            df.writerow(ct_json['krstatus'][0].values())
             
             file.close()
             
