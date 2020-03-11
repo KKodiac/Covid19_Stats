@@ -26,8 +26,9 @@ class CovidInfokr:
 
     def return_kr_dat(self):
         try:
-            country_stat = requests.get(path.join(self.kr_url,"status/"))
+            # country_stat = requests.get(path.join(self.kr_url,"status/"))
             regional_stat = requests.get(path.join(self.kr_url,"status/region/"))
+            detail_stat = requests.get(path.join(self.kr_url, "status/inspection/detail"))
         except ConnectionError:
             print("API Request 를 받지 못했습니다.\n")
             exit()
@@ -35,12 +36,12 @@ class CovidInfokr:
             print("연결이 원활하지 않습니다.\n")
             exit()
             
-        return country_stat, regional_stat
+        return regional_stat, detail_stat
         
         
     def covid_get_data_kr(self):
-        ct, rg = self.return_kr_dat()
-        ct_json = json.loads(ct.text)
+        rg, dt = self.return_kr_dat()
+        dt_json = json.loads(dt.text)
         rg_json = json.loads(rg.text)
         
         region_kr = [
@@ -67,18 +68,30 @@ class CovidInfokr:
         with open(f'Data/covid_dat_kr_total_{c_date}.csv', 'w+') as file:
             df = csv.writer(file)
             df.writerow(['General Korean Situation (Covid-19)'])
-            stats = ['Confirmed', 'Recovered','Deceased', 'Investigated']
-            df.writerow(stats)
-            print(ct_json)
-            print(ct_json['krstatus'][0])
-            df.writerow(ct_json['krstatus'][0].values())
+            keys = ['Iso', 'Quar','Deceased', 'Conf_Test', 'Neg', 'Num_Test', 'Under_Test', 'Total_Test']
+            df.writerow(keys)
+            
+            line = []
+            jdata = dt_json['InspectionDetail']
+            
+            for key in list(jdata.keys()):
+                if(key=='ConfirmationPatient'):
+                    for sval in list(jdata[key].values()):
+                        line.append(sval)
+                else:
+                    line.append(jdata[key])
+            
+            
+            
+            # print(dt_json['InspectionDetail']['ConfirmationPatient'])
+            df.writerow(line)
             
             file.close()
             
         with open(f'Data/covid_dat_kr_{c_date}.csv', "w+") as file:
             df = csv.writer(file)
             for cnt, region in enumerate(region_kr):
-                print(rg_json)
+                
                 data = rg_json['region'][cnt][region]
                 data['Region'] = region
                 

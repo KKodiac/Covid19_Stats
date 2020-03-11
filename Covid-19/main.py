@@ -1,4 +1,3 @@
-import argparse, sys
 import covid19_kr, covid19_wd
 
 

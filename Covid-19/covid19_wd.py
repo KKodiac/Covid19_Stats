@@ -82,10 +82,7 @@ class CovidInfowd:
         data = json.load(inputFile)
         inputFile.close()
         output = csv.writer(outputFile)
-        # print(data['features'])
         output.writerow(data[0]['attributes'])
-        print(data[0]['attributes'].values())
-        # output.writerow(data[0].keys())
         for row in data:
             output.writerow(row['attributes'].values())
             
