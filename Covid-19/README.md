@@ -20,6 +20,13 @@ Data scrapes Covid-19 Confirmed/Cured/Deceases Cases.
  By following the link above, you can view the entire situation in Korea. There are also links provided by Korean Local Governments on the lower side of the page.
   There are up-to-date situation reports about each individual local government. 
  위에 링크를 활용하면 각 시도에서 제공하는 지역별 코로나 현황을 볼 수 있습니다. 대한민국 짱 
+#### Data / 데이터
+
+* [covid_dat_kr_total`{date}`] Returns total status of Covid-19 in South Korea.
+* [covid_dat_kr_total`{날짜}`] 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
+
+* [covid_dat_kr_`{date}`] Returns regional status of Covid-19 in South Korea.
+* [covid_dat_kr_`{날짜}`] 코로나 바이러스의 지역적 한국 현황을 보여줍니다.
 
 ### Covid19 World Data
 
@@ -41,7 +48,7 @@ Field:
 python3 main.py
 ```Look for results in /Data/ folder```
 ```
-* This searches for Values with more than 0 Confirmed cases and returns all `Field` values with it.
+
 * Returns in JSON format in order from least to most Confirmed cases.
 
 Documents about ArcGIS FeatureService Rest API can be found here:<br />
