@@ -65,7 +65,7 @@ class CovidInfokr:
         ]
         c_date = ctime(time())
         
-        with open(f'Data/covid_dat_kr_total_{c_date}.csv', 'w+') as file:
+        with open(f'Data/Korea/covid_dat_kr_total_{c_date}.csv', 'w+') as file:
             df = csv.writer(file)
             df.writerow(['General Korean Situation (Covid-19)'])
             keys = ['Iso', 'Quar','Deceased', 'Conf_Test', 'Neg', 'Num_Test', 'Under_Test', 'Total_Test']
@@ -88,7 +88,7 @@ class CovidInfokr:
             
             file.close()
             
-        with open(f'Data/covid_dat_kr_{c_date}.csv', "w+") as file:
+        with open(f'Data/Korea/covid_dat_kr_{c_date}.csv', "w+") as file:
             df = csv.writer(file)
             for cnt, region in enumerate(region_kr):
                 
