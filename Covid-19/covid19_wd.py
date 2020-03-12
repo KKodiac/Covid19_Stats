@@ -78,11 +78,24 @@ class CovidInfowd:
     def jsontocsv(self):
         c_date = ctime(time())
         inputFile = open("covid_dat.json")
-        outputFile = open(f"Data/World/covid_dat_{c_date}.csv", 'w+')
         data = json.load(inputFile)
         inputFile.close()
-        output = csv.writer(outputFile)
-        output.writerow(data[0]['attributes'])
-        for row in data:
-            output.writerow(row['attributes'].values())
-            
+        
+        if(path.isfile(f"Data/World/covid_dat.csv")==False):
+            with open(f"Data/World/covid_dat.csv", 'w+') as outputFile:
+                output = csv.writer(outputFile)
+                keys = data[0]['attributes']
+                keys['date'] = ''
+                
+                output.writerow(keys)
+        with open(f"Data/World/covid_dat.csv", 'a') as outputFile:
+            output = csv.writer(outputFile)
+            for row in data:
+                values = row['attributes']
+                print(values)
+                values['date'] = ctime(time())
+                print(values.values())
+                output.writerow(values.values())
+                
+        
+        
