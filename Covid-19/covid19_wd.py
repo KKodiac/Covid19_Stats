@@ -92,9 +92,7 @@ class CovidInfowd:
             output = csv.writer(outputFile)
             for row in data:
                 values = row['attributes']
-                print(values)
                 values['date'] = ctime(time())
-                print(values.values())
                 output.writerow(values.values())
                 
         
