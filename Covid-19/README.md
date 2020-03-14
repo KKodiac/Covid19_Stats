@@ -22,12 +22,15 @@ Data scrapes Covid-19 Confirmed/Cured/Deceases Cases.
 * [서울시청 홈페이지](http://www.seoul.go.kr/coronaV/coronaStatus.do)에서 서울시의 확진자 데이터를 csv 파일 형태로 스크레이프 합니다
 #### Data / 데이터
 
-* [covid_dat_kr_region](./Covid-19/Data/Korea/covid_dat_kr_region.csv) Returns regional status of Covid-19 in South Korea.
-* [covid_dat_kr_region](./Covid-19/Data/Korea/covid_dat_kr_region.csv) 코로나 바이러스의 지역적 한국 현황을 보여줍니다.
-* [covid_dat_kr_total](./Covid-19/Data/Korea/covid_dat_kr_total.csv) Returns total status of Covid-19 in South Korea.
-* [covid_dat_kr_total](./Covid-19/Data/Korea/covid_dat_kr_total.csv) 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
-* [covid_dat_seoul](./Covid-19/Data/Korea/covid_dat_seoul.csv) Returns Seoul's confirmed cases of Covid-19.
-* [covid_dat_seoul](./Covid-19/Data/Korea/covid_dat_seoul.csv) 서울 시의 확진자 현황을 보여줍니다
+* [covid_dat_kr_region](./Data/Korea/covid_dat_kr_region.csv) 
+  * Returns regional status of Covid-19 in South Korea.
+  * 코로나 바이러스의 지역적 한국 현황을 보여줍니다.
+* [covid_dat_kr_total](./Data/Korea/covid_dat_kr_total.csv) 
+  * Returns total status of Covid-19 in South Korea.
+  * 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
+* [covid_dat_seoul](./Data/Korea/covid_dat_seoul.csv) 
+  * Returns Seoul's confirmed cases of Covid-19.
+  * 서울 시의 확진자 현황을 보여줍니다
 
 ### Covid19 World Data
 
