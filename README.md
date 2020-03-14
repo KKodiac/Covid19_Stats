@@ -38,6 +38,8 @@ python3 -m pip install -r requirements.txt
 ## Acknowledgments
 
 * World data scraped from - *github repo* - [Covid-19](https://github.com/CSSEGISandData/COVID-19) - [Service](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer)
+and 
+* [WorldOMeters](https://www.worldometers.info/coronavirus/#countries)
 * Korea data scraped from [질병관리본부(Korea CDC)](http://ncov.mohw.go.kr/index_main.jsp) and [zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API/)
 
 ### Any problems please contact me at seanhong2000@gmail.com

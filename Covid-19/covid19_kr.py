@@ -19,6 +19,8 @@ from time import time, ctime
         - sejong        - gyeonggi
         - gangwon
 """
+
+
 class CovidInfokr:
     def __init__(self):
         self.c_date = ctime(time())
@@ -26,6 +28,7 @@ class CovidInfokr:
         self.kcdc = "http://ncov.mohw.go.kr/bdBoardList_Real.do?"
         self.data_regional = f'Data/Korea/covid_dat_kr_region.csv'
         self.data_country_kr = f'Data/Korea/covid_dat_kr_total.csv'
+        
     def return_kr_dat(self):
         try:
             regional_stat = requests.get(path.join(self.kr_url,"status/region/"))
@@ -59,6 +62,7 @@ class CovidInfokr:
             'GYEONGNAM', # 15
             'JEJU',      # 16
         ]
+        
         rg_json = json.loads(rg.text)
         
         for cnt, region in enumerate(region_kr):
@@ -82,7 +86,17 @@ class CovidInfokr:
             
 
     def get_country_data(self, dt):
-        keys = ['patient', 'recovered','deceased', 'total_confirmed', 'test_negative', 'test_accumulate', 'test_under_exam', 'test_total', 'date']
+        keys = [
+            'patient',
+            'recovered',
+            'deceased',
+            'total_confirmed',
+            'test_negative',
+            'test_accumulate',
+            'test_under_exam',
+            'test_total',
+            'date'
+            ]
         soup = bs4(dt.text, 'html.parser')
         temp = soup.find(class_='minisize').find_all('td')
         status = [data.text for data in temp]
@@ -97,8 +111,9 @@ class CovidInfokr:
         with open(self.data_country_kr, 'a+') as file:
             df = csv.writer(file)
             df.writerow(status)
-            
             file.close()
+            
+            
     def covid_get_data_kr(self):
         
         rg, dt = self.return_kr_dat()

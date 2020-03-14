@@ -48,12 +48,12 @@ class CovidInfowd:
         self.ofield= "*"
         self.orderfield = "OBJECTID"
         self.fformat = "json"
-    
+        self.datafile = f"Data/World/covid_dat.csv"
+        
     def covid_get_data(self):
         slink = service_link.format(self.label)
         qlink = query_syn.format(self.fformat, self.wfield, self.ofield, self.orderfield)
         data_url = path.join(slink, qlink)
-        # print(data_url)
         jtext = requests.get(data_url).text
         
         return jtext 
@@ -81,8 +81,8 @@ class CovidInfowd:
         data = json.load(inputFile)
         inputFile.close()
         
-        if(path.isfile(f"Data/World/covid_dat.csv")==False):
-            with open(f"Data/World/covid_dat.csv", 'w+') as outputFile:
+        if(path.isfile(self.datafile)==False):
+            with open(self.datafile, 'w+') as outputFile:
                 output = csv.writer(outputFile)
                 keys = data[0]['attributes']
                 keys['date'] = ''

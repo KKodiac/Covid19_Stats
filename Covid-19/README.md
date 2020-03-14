@@ -22,15 +22,16 @@ Data scrapes Covid-19 Confirmed/Cured/Deceases Cases.
  위에 링크를 활용하면 각 시도에서 제공하는 지역별 코로나 현황을 볼 수 있습니다. 대한민국 짱 
 #### Data / 데이터
 
-* [covid_dat_kr_total`{date}`] Returns total status of Covid-19 in South Korea.
-* [covid_dat_kr_total`{날짜}`] 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
+* [covid_dat_kr_region] Returns regional status of Covid-19 in South Korea.
+* [covid_dat_kr_region] 코로나 바이러스의 지역적 한국 현황을 보여줍니다.
 
-* [covid_dat_kr_`{date}`] Returns regional status of Covid-19 in South Korea.
-* [covid_dat_kr_`{날짜}`] 코로나 바이러스의 지역적 한국 현황을 보여줍니다.
+* [covid_dat_kr_total] Returns total status of Covid-19 in South Korea.
+* [covid_dat_kr_total] 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
 
 ### Covid19 World Data
 
-* [CSSEGISandData/CODIV-19](https://github.com/CSSEGISandData/COVID-19) 에서 사용 중인 ArcGIS API를 활용합니다.
+* [CSSEGISandData/CODIV-19](https://github.com/CSSEGISandData/COVID-19) 에서 사용 중인 ArcGIS API를 활용합니다. 
+* [WorldOMeters](https://www.worldometers.info/coronavirus/#countries) 에서 데이터를 스크래이프 합니다.
 
 #### Try it out
 ```
@@ -78,6 +79,7 @@ Documents about ArcGIS FeatureService Rest API can be found here:<br />
 
 
 * World data scraped from - *github repo* - [Covid-19](https://github.com/CSSEGISandData/COVID-19) - [Service](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer)
+and 
+* [WorldOMeters](https://www.worldometers.info/coronavirus/#countries).
 * Korea data scraped from [질병관리본부(Korea CDC)](http://ncov.mohw.go.kr/index_main.jsp) and [zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API/)
-* 
 ### Any problems please contact me at [seanhong2000@gmail.com](seanhong2000@gmail.com)
