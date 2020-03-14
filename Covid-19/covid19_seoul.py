@@ -18,14 +18,17 @@ df = pd.DataFrame(dummy_data1)
 res = requests.get(url)
 soup = BeautifulSoup(res.content, "lxml")
 
-# find table tag
-table = soup.find_all("table")[1]
-print(len(table))
+# use table html tag to find tables in the webpage:
+tables = soup.find_all("table")
+print(len(tables))
 
-# using panda's read_html to crawl tabledata
-df_crawl = pd.read_html(str(table), encoding="utf-8", header=0)[0]
-
-# save as csv file
-df_crawl.to_csv(
-    "/Users/noopy/_forks/Covid19_Stats/Covid-19/Data/Korea/seoul_timeseries.csv"
-)
+# crawl all table data from the webpage: this includes unwanted data
+for i in range(0, len(tables)):
+    # using panda's read_html to crawl tabledata
+    df_crawl = pd.read_html(str(tables[i]), encoding="utf-8", header=0)[0]
+    # save as csv file
+    df_crawl.to_csv(
+        "/Users/noopy/_forks/Covid19_Stats/Covid-19/Data/Korea/seoul_timeseries/"
+        + str(i)
+        + ".csv"
+    )
