@@ -59,6 +59,3 @@ class CovidInfoSeoul:
 
         df_confirmed.to_csv("./Data/Korea/covid_dat_seoul.csv")
         print("Seoul's data crawled and merged")
-
-
-CovidInfoSeoul()
