@@ -28,6 +28,7 @@ python3 -m pip install -r requirements.txt
 * [Python3](https://www.python.org/doc)<br />
 - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) <br />
 - [Requests](https://requests.readthedocs.io/en/master/)<br />
+- [pandas](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html)
 
 ## Authors
 
@@ -35,12 +36,18 @@ python3 -m pip install -r requirements.txt
 -현재 군인 현역으로 있는 학생이기 때문에 많이 부족합니다. 보완점을 가르쳐주시면 감사하겠습니다!<br />
 -Any lacking parts in my code are welcome to any suggestions and criticism.<br />
 
+## Contributors
+
+- [Young-jin Ahn (안영진)](https://github.com/snoop2head)
+
 ## Acknowledgments
 
 * World data scraped from - *github repo* - [Covid-19](https://github.com/CSSEGISandData/COVID-19) - [Service](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer)
-and 
 * [WorldOMeters](https://www.worldometers.info/coronavirus/#countries)
-* Korea data scraped from [질병관리본부(Korea CDC)](http://ncov.mohw.go.kr/index_main.jsp) and [zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API/)
+* Korea data scraped from / 한국데이터 출처는 다음과 같습니다:
+  * [질병관리본부(Korea CDC)](http://ncov.mohw.go.kr/index_main.jsp)
+  * [zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API/)
+  * [서울시청 홈페이지: Seoul City webpage](http://www.seoul.go.kr/coronaV/coronaStatus.do)
 
 ### Any problems please contact me at seanhong2000@gmail.com
 

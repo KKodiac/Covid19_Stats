@@ -88,8 +88,10 @@ Documents about ArcGIS FeatureService Rest API can be found here:<br />
 
 
 * World data scraped from - *github repo* - [Covid-19](https://github.com/CSSEGISandData/COVID-19) - [Service](https://services1.arcgis.com/0MSEUqKaxRlEPj5g/arcgis/rest/services/ncov_cases/FeatureServer)
-and 
 * [WorldOMeters](https://www.worldometers.info/coronavirus/#countries).
-* Korea data scraped from [질병관리본부(Korea CDC)](http://ncov.mohw.go.kr/index_main.jsp),  [zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API/), and [서울시청 홈페이지: Seoul City webpage](http://www.seoul.go.kr/coronaV/coronaStatus.do)
+* Korea data scraped from / 한국데이터 출처는 다음과 같습니다:
+  * [질병관리본부(Korea CDC)](http://ncov.mohw.go.kr/index_main.jsp)
+  * [zeroday0619/COVID-19API](https://github.com/zeroday0619/COVID-19API/)
+  * [서울시청 홈페이지: Seoul City webpage](http://www.seoul.go.kr/coronaV/coronaStatus.do)
 
 ### Any problems please contact me at [seanhong2000@gmail.com](seanhong2000@gmail.com)
