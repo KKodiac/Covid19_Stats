@@ -7,11 +7,27 @@ Data scrapes Covid-19 Confirmed/Cured/Deceases Cases in Korea and rest of the Wo
 * Time recording is based on UTC (+0900 for KST) 
 * 자료 파일의 시간은 UTC 기준입니다.(UTC+0900가 한국기준시 입니다.)
 
-* [Korea - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/Data/Korea)
+### [Korea - Covid-19 Daily Statistics](./Covid-19/Data/Korea)
 
-* [World - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19-Scraper/blob/master/Covid-19/Data/World)
+* [covid_dat_kr_region](./Covid-19/Data/Korea/covid_dat_kr_region.csv) 
+  * Returns regional status of Covid-19 in South Korea.
+  * 코로나 바이러스의 지역적 한국 현황을 보여줍니다.
+* [covid_dat_kr_total](./Covid-19/Data/Korea/covid_dat_kr_total.csv) 
+  * Returns total status of Covid-19 in South Korea.
+  * 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
+* [covid_dat_seoul](./Covid-19/Data/Korea/covid_dat_seoul.csv) 
+  * Returns Seoul's confirmed cases of Covid-19.
+  * 서울 시의 확진자 현황을 보여줍니다
+
+### [World - Covid-19 Daily Statistics](./Covid-19/Data/World)
+
+* [CSSEGISandData/CODIV-19](https://github.com/CSSEGISandData/COVID-19) 에서 사용 중인 ArcGIS API를 활용합니다. 
+* [WorldOMeters](https://www.worldometers.info/coronavirus/#countries) 에서 데이터를 스크래이프 합니다.
+
+
 
 ## Getting Started
+
 ### Prerequisites
 Create a virtual environment.<br />
 파이썬 가상환경을 만드세요.<br />
