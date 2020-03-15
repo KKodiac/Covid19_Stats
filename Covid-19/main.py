@@ -23,9 +23,7 @@ if __name__ == '__main__':
     
     
     N_Covidwd = covid19_nwd.CovidWorldInfo() # new World Stats that has more accurate
-    test = N_Covidwd.inputData()             # standings on current state of the
+    N_Covidwd.worldTimeseries()
+    N_Covidwd.inputData()             # standings on current state of the
                                              # epidemic
     
-    # Covidwd.show() # terminal output
-    
-

@@ -2,12 +2,15 @@ import requests
 import csv
 from os import path 
 from bs4 import BeautifulSoup as bs4
-
+from time import ctime, time
+from shutil import copyfile
 
 class CovidWorldInfo:
     def __init__(self):
+        self.today = ctime(time())
         self.scrape_url = "https://www.worldometers.info/coronavirus/"
         self.datafile = f"Data/World/new_covid_dat.csv"
+        self.appendfile = f"Data/World/world_timeseries/{self.today}"
         
     def getData(self):
         page = requests.get(self.scrape_url)
@@ -27,21 +30,18 @@ class CovidWorldInfo:
     
     def inputData(self):
         thead, tbody = self.getData()
-        if(path.isfile(self.datafile)==False):
-            with open(self.datafile, 'w+') as file:
-                cw = csv.writer(file)
-                cw.writerow(thead)
-                for i in tbody:
-                    cw.writerow(i)
-                file.close()
-        else:
-            with open(self.datafile, 'a') as file:
-                cw = csv.writer(file)
-                cw.writerow(tbody)
-                file.close()
-        
-    # def showData(self):
-    #     test = self.getData()
-    #     print(test)
     
-    
+        with open(self.datafile, 'w+') as file:
+            cw = csv.writer(file)
+            cw.writerow(thead)
+            for i in tbody:
+                cw.writerow(i)
+            file.close()
+            
+    # this function should run beefore inputData()
+    def worldTimeseries(self):
+        with open(self.datafile) as file:
+            if(path.isfile(self.datafile)==True):
+                appendfile = open(self.appendfile, 'w+')
+                copyfile(self.datafile, self.appendfile)
+            
