@@ -6,8 +6,8 @@ Data scrapes Covid-19 Confirmed/Cured/Deceases Cases.
 
 * Time recording is based on UTC (+0900 for KST)
 * 자료 파일의 시간은 UTC 기준입니다.(UTC+0900가 한국기준시 입니다.)
-* [Korea - Covid-19 Daily Statistics](./Covid-19/Data/Korea)
-* [World - Covid-19 Daily Statistics](./Covid-19/Data/World)
+* [Korea - Covid-19 Daily Statistics](./Data/Korea)
+* [World - Covid-19 Daily Statistics](./Data/World)
 
 ### Covid19 Korea Data / 코로나 한국 자료 
 
