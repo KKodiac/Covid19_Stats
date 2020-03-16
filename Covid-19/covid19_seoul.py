@@ -19,15 +19,12 @@ class CovidInfoSeoul:
         self.scrape_url = "http://www.seoul.go.kr/coronaV/coronaStatus.do"
 
     def crawl_and_save_data(self):
-        # access to seoul corona data panel
-        scrape_url = "http://www.seoul.go.kr/coronaV/coronaStatus.do"
-
         # create dummy dataframe
         dummy_data1 = {}
         df = pd.DataFrame(dummy_data1)
 
         # get page content response from the web using requests and beautifulsoup
-        res = requests.get(scrape_url)
+        res = requests.get(self.scrape_url)
         soup = BeautifulSoup(res.content, "lxml")
 
         # use table html tag to find tables in the webpage:
