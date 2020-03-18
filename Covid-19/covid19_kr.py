@@ -24,7 +24,7 @@ from time import time, ctime
 class CovidInfokr:
     def __init__(self):
         self.c_date = ctime(time())
-        self.kr_url= "https://ncov.zeroday0619.kr/kr/"
+        self.kr_url= "https://ncov.zeroday0619.kr/v1/kr/"
         self.kcdc = "http://ncov.mohw.go.kr/bdBoardList_Real.do?"
         self.data_regional = f'Data/Korea/covid_dat_kr_region.csv'
         self.data_country_kr = f'Data/Korea/covid_dat_kr_total.csv'
@@ -64,7 +64,6 @@ class CovidInfokr:
         ]
         
         rg_json = json.loads(rg.text)
-        
         for cnt, region in enumerate(region_kr):
             data = rg_json['region'][cnt][region]
             data['Region'] = region
@@ -112,7 +111,6 @@ class CovidInfokr:
             df = csv.writer(file)
             df.writerow(status)
             file.close()
-            
             
     def covid_get_data_kr(self):
         
