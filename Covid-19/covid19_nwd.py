@@ -15,8 +15,10 @@ class CovidWorldInfo:
     def getData(self):
         page = requests.get(self.scrape_url)
         html = bs4(page.text, 'html.parser')
-        table = html.find(id="main_table_countries")
+        table = html.find(id="main_table_countries_today")
+        
         thead_all = table.thead.find_all('th')
+        
         thead = [th.text for th in thead_all]
         
         tbody_all = table.find_all('tbody')
