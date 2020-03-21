@@ -1,14 +1,36 @@
 from fastapi import FastAPI
+from os.path import join
 
-app = FastAPI()
+covid_api = FastAPI()
 
-@app.post("/World")
+data_root = {
+    "data_root": "../Covid-19/Data/",
+    "data_root_kr": "Korea/",
+    "kr_seoul_timeseries": "seoul_timeseries/",
+    "data_root_wd": "World/",
+    "wd_world_timeseries": "world_timeseries/",
+}
 
-@app.post("/Korea/")
-async def post():
-    print("홍섬민 바보")
+file_path = {
+    "kr_regional_dat": "covid_dat_kr_region.csv",
+    "kr_all_dat": "covid_dat_kr_total.csv",
+    "wd_new_dat": "new_covid_dat.csv",
+    "wd_dat": "covid_dat.csv"
+}
 
 
-@app.get("/")
+
+@covid_api.get("/")
 async def root():
-    return {"message": "Hello World"}
+    return {"message": "HELLO WORLD"}
+    
+@covid_api.get("/Korea/")
+async def korea_status():
+    path = join(data_root["data_root"], data_root["data_root_kr"])
+    return {"message" : f"{path}"}
+
+
+@covid_api.get("/World/")
+async def world_status():
+    path = join(data_root["data_root"],data_root["data_root_wd"])
+    return {"message" : f"{path}"}
