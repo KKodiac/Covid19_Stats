@@ -15,9 +15,8 @@ import covid19_kr, covid19_wd, covid19_nwd, covid19_seoul
 
 if __name__ == '__main__':
     covidkr = covid19_kr.CovidInfokr() # Korean Stats for Covid-19
-    covidseoul = covid19_seoul.CovidInfoSeoul() # Seoul Stats for Covid-19
-    covidseoul.crawl_and_save_data()
-    status = covidkr.covid_get_data_kr() 
+    # status = covidkr.reorginize()
+    covidkr.covid_get_data_kr()
     Covidwd = covid19_wd.CovidInfowd() # World Stats for Covid-19
     Covidwd.jsontocsv()
     

@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup as bs4
 from os import path
 import json, csv
 from time import time, ctime
+
 """
     API provide by : https://ncov.zeroday0619.kr/
     sub url : {status}/{region}/{location}
@@ -117,3 +118,19 @@ class CovidInfokr:
         rg, dt = self.return_kr_dat()
         self.get_regional_data(rg)
         self.get_country_data(dt)
+        
+    ## TODO: re-sort csv data into integrated format in CSSE
+    
+    def reorginize(self):
+        with open(self.data_regional) as data:
+            reader = csv.reader(data)
+            data_list = [row for row in reader] # entire mod of data from region file
+            header = data_list[0]
+            del header[-1] # deletes 'date' element in header
+            header.reverse() # reverse ['increase', 'patient', 'death', 'ratio', 'inspection', 'Region']
+            rev_data_list = [ele[-2::-1] for ele in data_list[1:]]
+            
+                
+                
+            
+

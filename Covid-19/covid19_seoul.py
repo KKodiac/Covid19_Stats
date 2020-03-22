@@ -1,10 +1,8 @@
-# This one gets all table data text
+from bs4 import BeautifulSoup as bs4
+import csv
 import numpy as np
 import pandas as pd
 import requests
-from bs4 import BeautifulSoup
-import csv
-
 
 class CovidInfoSeoul:
 
@@ -25,7 +23,7 @@ class CovidInfoSeoul:
 
         # get page content response from the web using requests and beautifulsoup
         res = requests.get(self.scrape_url)
-        soup = BeautifulSoup(res.content, "lxml")
+        soup = bs4(res.content, "lxml")
 
         # use table html tag to find tables in the webpage:
         tables = soup.find_all("table")
@@ -55,4 +53,6 @@ class CovidInfoSeoul:
                     df_confirmed = pd.concat([df_confirmed, df_not_validated])
 
         df_confirmed.to_csv("./Data/Korea/covid_dat_seoul.csv")
-        print("Seoul's data crawled and merged")
+
+
+
