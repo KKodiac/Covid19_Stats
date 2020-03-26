@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from os.path import join
+import csv 
 
 covid_api = FastAPI()
 
