@@ -65,23 +65,24 @@ class CovidInfokr:
         ]
         
         rg_json = json.loads(rg.text)
-        for cnt, region in enumerate(region_kr):
-            data = rg_json['region'][cnt][region]
-            data['Region'] = region
+        for cnt, data in enumerate(rg_json):
+            _region = region_kr[cnt]
+            region_data = data[_region]
+            
             if(path.isfile(self.data_regional)==False):
                 with open(self.data_regional, 'w+') as file:
                     df = csv.writer(file)
-                    data['date'] = ''
-                    keys = data.keys()
+                    region_data['region'] = ''
+                    region_data['date'] = ''
                     df.writerow(data.keys())
                     file.close()
             else:
                 with open(self.data_regional, 'a') as file:
                     df = csv.writer(file)
-                    values = data.values()
-                    data['date'] = ctime(time())
-                    
-                    df.writerow(data.values())
+                    values = region_data.values()
+                    region_data['region'] = _region
+                    region_data['date'] = ctime(time())
+                    df.writerow(region_data.values())
                     file.close()
             
 
