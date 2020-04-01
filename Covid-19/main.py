@@ -1,29 +1,17 @@
-import covid19_kr, covid19_wd, covid19_nwd, covid19_seoul
-
-
-"""
-    field_val = [
-        "OBJECTID",
-        "PROVINCE_STATE",
-        "COUNTRY_REGION",
-        "CONFIRMED",
-        "DEATHS",
-        "RECOVERED"
-        ]
-"""
-    
+from src.covid19_kr import CovidInfokr
+from src.covid19_wd import CovidWorldInfo
+from src.covid19_seoul import CovidInfoSeoul
 
 if __name__ == '__main__':
-    covidkr = covid19_kr.CovidInfokr() # Korean Stats for Covid-19
-    # status = covidkr.reorginize()
+    covidkr = CovidInfokr() # Korean Stats for Covid-19
     covidkr.covid_get_data_kr()
-    Covidwd = covid19_wd.CovidInfowd() # World Stats for Covid-19
-    Covidwd.jsontocsv()
+    
+    n_covidwd = CovidWorldInfo() # new World Stats that has more accurate
+    n_covidwd.worldTimeseries()
+    n_covidwd.inputData()             # standings on current state of the epidemic
+    
+    seoul = CovidInfoSeoul()
+    seoul.crawl_and_save_data()
     
     
-    
-    N_Covidwd = covid19_nwd.CovidWorldInfo() # new World Stats that has more accurate
-    N_Covidwd.worldTimeseries()
-    N_Covidwd.inputData()             # standings on current state of the
-                                             # epidemic
     
