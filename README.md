@@ -12,6 +12,10 @@ Data scrapes Covid-19 Confirmed/Cured/Deceases Cases in Korea and rest of the Wo
 * [covid_dat_kr_region](./Covid-19/Data/Korea/covid_dat_kr_region.csv) 
   * Returns regional status of Covid-19 in South Korea.
   * 코로나 바이러스의 지역적 한국 현황을 보여줍니다.
+    ```
+      Formated like: [Increased # of patients compared to day before] | [Total # of patients] | [Total # of Deceases] | [Under Inspection] | [Patient increase to Total # of patients ratio]
+    ```
+  * Or more simply just: 'increase'	'patient'	'deceased' 'inspection' 'ratio'
 * [covid_dat_kr_total](./Covid-19/Data/Korea/covid_dat_kr_total.csv) 
   * Returns total status of Covid-19 in South Korea.
   * 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
