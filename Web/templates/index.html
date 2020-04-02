@@ -11,9 +11,7 @@
         'mapsApiKey': 'AIzaSyCkh9f5WSyTc9iKeVCD4AaHhUJCJJwPOwA'
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
-
-      function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable([
+      /*test [ 
           ['City', 'Patients', 'Area Percentage'],
           ['Seoul', 200, 23],
           ['Busan', 300, 23],
@@ -32,7 +30,11 @@
           ['Jeonranamdo',123, 23],  // 전남
           ['Jeju',123, 23],
           ['KR-50',123, 23]   // 세종
-        ]);
+        ]*/
+      var array = {{ safe(array) }};
+      
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable(array);
         
         var options = {
           region: 'KR',
