@@ -8,51 +8,64 @@
         'packages':['geochart'],
         // Note: you will need to get a mapsApiKey for your project.
         // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
-        'mapsApiKey': 'AIzaSyCkh9f5WSyTc9iKeVCD4AaHhUJCJJwPOwA'
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
-      /*test [ 
-          ['City', 'Patients', 'Area Percentage'],
-          ['Seoul', 200, 23],
-          ['Busan', 300, 23],
-          ['Daegu', 400, 23],
-          ['Daejeon', 500, 23],
-          ['Gwangju', 600, 23],
-          ['Incheon', 700, 23],
-          ['Ulsan', 300, 23],
-          ['Chungcheongbugdo	',300, 23], // 충북
-          ['Chungcheongnamdo	',233, 23], // 충남
-          ['Gangwon',222, 23],
-          ['Gyeonggi',222, 23],
-          ['Gyeongsangbugdo',2222, 23], // 경북
-          ['Gyeongsangnamdo',334, 23],  // 경남
-          ['Jeonrabugdo',2323, 23], // 전북
-          ['Jeonranamdo',123, 23],  // 전남
-          ['Jeju',123, 23],
-          ['KR-50',123, 23]   // 세종
-        ]*/
-      var array = {{ safe(array) }};
+      // var test = [ 
+      //     ['City', 'Patients', 'Area Percentage'],
+      //     ['Seoul', 200, 23],
+      //     ['Busan', 300, 23],
+      //     ['Daegu', 400, 23],
+      //     ['Daejeon', 500, 23],
+      //     ['Gwangju', 600, 23],
+      //     ['Incheon', 700, 23],
+      //     ['Ulsan', 300, 23],
+      //     ['Chungcheongbugdo	',300, 23], // 충북
+      //     ['Chungcheongnamdo	',233, 23], // 충남
+      //     ['Gangwon',222, 23],
+      //     ['Gyeonggi',222, 23],
+      //     ['Gyeongsangbugdo',2222, 23], // 경북
+      //     ['Gyeongsangnamdo',334, 23],  // 경남
+      //     ['Jeonrabugdo',2323, 23], // 전북
+      //     ['Jeonranamdo',123, 23],  // 전남
+      //     ['Jeju',123, 23],
+      //     ['KR-50',123, 23]   // 세종
+      //   ];
+      var array = {{ array|safe }};
+      var array_all = {{ array_all|safe }};
       
       function drawRegionsMap() {
-        var data = google.visualization.arrayToDataTable(array);
-        
+        var regional_data = google.visualization.arrayToDataTable(array);
+        var regional_data_detail = google.visualization.arrayToDataTable(array_all)
         var options = {
           region: 'KR',
           resolution: 'provinces',
           displayMode: 'regions',
-          colorAxis: {colors: ['white', 'red']},
+          colorAxis: {colors: ['green', 'orange', 'red']},
           backgroundColor: '#81d4fa',
           defaultColor: '#f5f5f5',
-          sizeAxis: { minValue: 0, maxValue: 100 }
+          sizeAxis: { minValue: 0, maxValue: 10000 }
         };
-
-        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
-
-        chart.draw(data, options);
+        
+        var options_detail = {
+          region:'KR',
+          resolution:'provinces',
+          displayMode: 'auto',
+          colorAxis: {colors: ['blue', 'yellow', 'red']},
+          backgroundColor: '#81d4fa',
+          defaultColor: '#f5f5f5',
+          sizeAxis: { minValue: 0, maxValue: 20 }
+        }
+        
+        var chart_regional = new google.visualization.GeoChart(document.getElementById('regions_div'));
+        var chart_data = new google.visualization.GeoChart(document.getElementById('visual_data'))
+        chart_regional.draw(regional_data, options);
+        chart_data.draw(regional_data_detail, options_detail);
       }
     </script>
   </head>
   <body>
     <div id="regions_div" style="width: 900px; height: 500px;"></div>
+    <div id="visual_data" style="width: 900px; height: 500px;"></div>
   </body>
 </html>
