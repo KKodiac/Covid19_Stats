@@ -25,7 +25,7 @@ from time import time, ctime
 class CovidInfokr:
     def __init__(self):
         self.c_date = ctime(time())
-        self.kr_url= "https://ncov.zeroday0619.dev/v1/kr"
+        self.kcdc_main = "http://ncov.mohw.go.kr/"
         self.kcdc = "http://ncov.mohw.go.kr/bdBoardList_Real.do?"
         self.data_regional = f'./Covid19/Data/Korea/covid_dat_kr_region.csv'
         self.data_country_kr = f'./Covid19/Data/Korea/covid_dat_kr_total.csv'
@@ -34,7 +34,7 @@ class CovidInfokr:
         
     def return_kr_dat(self):
         try:
-            regional_stat = requests.get(path.join(self.kr_url,"status/region/")).json()
+            regional_stat = requests.get(self.kcdc_main)
             detail_stat = requests.get(self.kcdc)
         except (requests.exceptions.HTTPError,requests.exceptions.Timeout):
             exit()
@@ -53,41 +53,36 @@ class CovidInfokr:
                 
         return fieldnames, fieldvalues
         
+    def crawl_regional_data(self,rg):
+        soup = bs4(rg.content, 'html.parser')
+        
+        rlist = []
+        for i in range(18):
+            data_html = soup.find(class_="rpsa_detail").find(id="map_city"+str(i+1)).find('ul')
+            incr = data_html.find(class_="sub_num").text
+            tincr = ''.join(e for e in incr if e.isalnum())
+            rlist.append(tincr)
+            for i in data_html.find_all(class_="num"):
+                rlist.append(i.text)
+            
+        return rlist
         
     def get_regional_data(self, rg):
-        region_kr = [
-            'SEOUL',     # 0
-            'BUSAN',     # 1
-            'DAEGU',     # 2
-            'INCHEON',   # 3
-            'GWANGJU',   # 4
-            'DAEJEON',   # 5
-            'ULSAN',     # 6
-            'SEJONG',    # 7
-            'GYEONGGI',  # 8
-            'GANGWON',   # 9
-            'CHUNGBUK',  # 10
-            'CHUNGNAM',  # 11
-            'JEONBUK',   # 12 
-            'JEONNAM',   # 13
-            'GYEONGBUK', # 14
-            'GYEONGNAM', # 15
-            'JEJU',      # 16
-        ]
-        
         fieldnames, fieldvalues = self.read_csv_data()
-        
+        # list inside list
+        rlist = self.crawl_regional_data(rg) 
+        # 서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기, 강원, 충북, 충남, 전북, 전남, 경북, 경남, 제주, 검역
+        # every 5 element is a data for a region
         new_values = []
-        for cnt, rg_data in enumerate(rg):
-            temp = ''
-            data = rg_data[region_kr[cnt]]
-            
-            for cnt, v in enumerate(list(data.values())):
-                if(cnt==4):
-                    temp+=str(v)
-                else: 
-                    temp+=(str(v)+'|')
-            new_values.append(temp)
+        tmp = ''
+        for cnt, data in enumerate(rlist):
+            if((cnt+1)%5==0):
+                tmp += data
+                new_values.append(tmp)
+                tmp = ''
+            else:
+                tmp += (data + '|')
+              
                 
         with open(self.data_regional, 'w+') as file:
             df = csv.writer(file)
@@ -132,7 +127,7 @@ class CovidInfokr:
         
         rg, dt = self.return_kr_dat()
         self.get_regional_data(rg)
-        self.get_country_data(dt)
+        # self.get_country_data(dt)
         
 
 
