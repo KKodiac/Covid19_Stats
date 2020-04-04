@@ -13,9 +13,9 @@ Data scrapes Covid-19 Confirmed/Cured/Deceases Cases in Korea and rest of the Wo
   * Returns regional status of Covid-19 in South Korea.
   * 코로나 바이러스의 지역적 한국 현황을 보여줍니다.
     ```
-      Formated like: [Increased # of patients compared to day before] | [Total # of patients] | [Total # of Deceases] | [Under Inspection] | [Patient increase to Total # of patients ratio]
+      [Increased # of patients compared to day before] | [Total # of patients] | [Total # of Recovered] | [Total # of Deceased] | [Ratio of Incidence / 100k Population]
     ```
-  * Or more simply just: 'increase'	'patient'	'deceased' 'inspection' 'ratio'
+  * Or more simply just: 'increase'	'patient'	'recovered' 'deceased' '/100k pop'
 * [covid_dat_kr_total](./Covid-19/Data/Korea/covid_dat_kr_total.csv) 
   * Returns total status of Covid-19 in South Korea.
   * 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
@@ -43,7 +43,19 @@ Install modules in `requirements.txt`.<br /><br />
 ```
 python3 -m pip install -r requirements.txt
 ```
+### For Visualization of Korean Regional dataset
+* Add These two lines to main.py
+```
+...
+...
+from Web import web
 
+if __name__ == '__main__':
+ ...
+ ... # And comment out These lines
+ ...
+  web.app.run(port=8080, debug=True)
+```
 ## Built With/사용된 파이썬 모듈
 * [Python3](https://www.python.org/doc)<br />
 - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) <br />
