@@ -21,15 +21,20 @@ class ThrowInfo:
         keys = ['City', 'Increase from day before', 'Total Patients', 'Total Deceased', 'Under Inspection', 'Increase to Patient Ratio']
         
         datarray = [[datarr[0],*self.unroll_data(datarr[-1])] for datarr in fieldvalues]
-        print(datarray)
+        print(f"Current date's status of Covid19:\n{datarray}")
         datarray.insert(0,keys)
         datarray_all = datarray
         
         for cnt, ele in enumerate(datarray):
-            if(cnt==0):
-                datarray_chart.append([ele[0],ele[2]])
-            else:
-                datarray_chart.append([ele[0],int(float(ele[2]))])
-            
+            try:
+                if(cnt==0):
+                    datarray_chart.append([ele[0],ele[2]])
+                else:
+                    datarray_chart.append([ele[0],int(float(ele[2]))])
+            except ValueError:
+                if(cnt==0):
+                    datarray_chart.append([ele[0],ele[2]])
+                else:
+                    datarray_chart.append([ele[0],int(str(ele[2]))])
         
         return datarray_all, datarray_chart

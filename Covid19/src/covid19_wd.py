@@ -10,7 +10,7 @@ class CovidWorldInfo:
         self.today = ctime(time())
         self.scrape_url = "https://www.worldometers.info/coronavirus/"
         self.datafile = f"./Covid19/Data/World/new_covid_dat.csv"
-        self.appendfile = f"./Covid19/Data/World/world_timeseries/{self.today}.csv"
+        self.appendfile = f"./Covid19/Data/World/world_timeseries/{self.today[4:]}.csv"
         
     def getData(self):
         page = requests.get(self.scrape_url)

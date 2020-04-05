@@ -5,8 +5,6 @@ import json, csv
 from time import time, ctime
 
 """
-    API provide by : https://ncov.zeroday0619.kr/
-    sub url : {status}/{region}/{location}
     status : 한국 전체 현황을 보여줍니다. Shows status of covid-19 in Korea
     region : 국내 지역마다의 현황을 보여줍니다. Shows regional status of covid-19
     location : 각 지역의 현황을 보여줍니다. Shows specific status of covid-19 in a region
@@ -62,8 +60,10 @@ class CovidInfokr:
             incr = data_html.find(class_="sub_num").text
             tincr = ''.join(e for e in incr if e.isalnum())
             rlist.append(tincr)
-            for i in data_html.find_all(class_="num"):
-                rlist.append(i.text)
+            for cnt,i in enumerate(data_html.find_all(class_="num")):
+                
+                tincr = ''.join(e for e in i.text if (e.isalnum() or (e=='.')))
+                rlist.append(tincr)
             
         return rlist
         
@@ -127,7 +127,7 @@ class CovidInfokr:
         
         rg, dt = self.return_kr_dat()
         self.get_regional_data(rg)
-        # self.get_country_data(dt)
+        self.get_country_data(dt)
         
 
 
