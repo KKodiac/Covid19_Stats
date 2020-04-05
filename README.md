@@ -1,4 +1,4 @@
-# Covid19-Scraper
+# Covid19 Stats
 코로나-19 에 대한 확진/완치/사망 에 대한 한국, 해외 정보를 수집합니다. <br />
 Data scrapes Covid-19 Confirmed/Cured/Deceases Cases in Korea and rest of the World.<br />
 
