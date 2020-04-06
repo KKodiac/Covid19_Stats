@@ -46,17 +46,9 @@ Install modules in `requirements.txt`.<br /><br />
 python3 -m pip install -r requirements.txt
 ```
 ### For Visualization of Korean Regional dataset
-* Add These two lines to main.py
+* Just run the main.py
 ```
-...
-...
-from Web import web
-
-if __name__ == '__main__':
- ...
- ... # And comment out These lines
- ...
-  web.app.run(port=8080, debug=True)
+ python3 main.py
 ```
 ## Built With/사용된 파이썬 모듈
 * [Python3](https://www.python.org/doc)<br />
