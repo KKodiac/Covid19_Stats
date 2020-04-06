@@ -30,6 +30,13 @@ class CovidInfokr:
         self.date = ctime(time())
         
         
+    def is_updated(self):
+        with open(self.data_country_kr) as file:
+            cur_dat = file.readlines()[-1].split(',')[-1][:10]
+            file.close()
+        
+        return (cur_dat==self.date[:10])
+    
     def return_kr_dat(self):
         try:
             regional_stat = requests.get(self.kcdc_main)
@@ -48,7 +55,9 @@ class CovidInfokr:
             fieldnames.append(self.date)
             for line in reader:
                 fieldvalues.append(line)
-                
+            
+            rfile.close() 
+            
         return fieldnames, fieldvalues
         
     def crawl_regional_data(self,rg):
@@ -124,6 +133,9 @@ class CovidInfokr:
             
             
     def run(self):
+        if(self.is_updated()):
+            print("Korea files have been updated Today")
+            return
         
         rg, dt = self.return_kr_dat()
         self.get_regional_data(rg)

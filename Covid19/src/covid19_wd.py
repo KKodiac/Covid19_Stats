@@ -10,8 +10,10 @@ class CovidWorldInfo:
         self.today = ctime(time())
         self.scrape_url = "https://www.worldometers.info/coronavirus/"
         self.datafile = f"./Covid19/Data/World/new_covid_dat.csv"
-        self.appendfile = f"./Covid19/Data/World/world_timeseries/{self.today[4:]}.csv"
+        self.appendfile = f"./Covid19/Data/World/world_timeseries/{self.today[4:10]+self.today[-5:]}.csv"
+        self.is_updated = path.isfile(self.appendfile)
         
+    
     def getData(self):
         page = requests.get(self.scrape_url)
         html = bs4(page.text, 'html.parser')
@@ -48,5 +50,9 @@ class CovidWorldInfo:
                 copyfile(self.datafile, self.appendfile)
     
     def run(self):
+        if(self.is_updated):
+            print("World file has been updated Today")
+            return
+        
         self.worldTimeseries()
         self.inputData()
