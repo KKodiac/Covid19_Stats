@@ -1,8 +1,10 @@
 from Covid19.src.covid19_kr import CovidInfokr
+from Covid19.src.covid19_wd import CovidInfowd
 
 class ThrowInfo:
     def __init__(self):
         self.infotron = CovidInfokr()
+        self.wdinfotron = CovidInfowd()
         
     def unroll_data(self, datarr):
         datarr = datarr.split('|')

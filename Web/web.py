@@ -10,6 +10,11 @@ def index():
     infotron = ThrowInfo()
     datarray_all, datarray_chart = infotron.parse_data()
     return render_template('index.html', array=json.dumps(datarray_chart), array_all=json.dumps(datarray_all))
+
+@app.route('/World')
+def world():
+    infortron = ThrowInfo()
+    datarry_chart = infortron.parse_data()
     
-# if __name__=='__main__':
-#     app.run(port=8080, debug = True)
+def run():
+    app.run(port=8080, debug = True)

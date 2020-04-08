@@ -5,7 +5,7 @@ from bs4 import BeautifulSoup as bs4
 from time import ctime, time
 from shutil import copyfile
 
-class CovidWorldInfo:
+class CovidInfowd:
     def __init__(self):
         self.today = ctime(time())
         self.scrape_url = "https://www.worldometers.info/coronavirus/"
