@@ -67,9 +67,9 @@ python3 -m pip install -r requirements.txt
     ```
 ## Built With / 사용된 도구
 * [Python3](https://www.python.org/doc)<br />
-- [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) <br />
-- [Requests](https://requests.readthedocs.io/en/master/)<br />
-- [pandas](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html)
+ - [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) <br />
+ - [Requests](https://requests.readthedocs.io/en/master/)<br />
+ - [pandas](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html)
 * [Google Charts API](https://developers.google.com/chart)
 
 ## Authors
