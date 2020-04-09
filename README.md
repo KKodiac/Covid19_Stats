@@ -10,9 +10,9 @@ Additionally provides simple visualization of Today's data.
 * Time recording is based on UTC (+0900 for KST) 
 * 자료 파일의 시간은 UTC 기준입니다.(UTC+0900가 한국기준시에용.)
 
-### [Korea - Covid-19 Daily Statistics](./Covid-19/Data/Korea)
+### [Korea - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea)
 
-* [covid_dat_kr_region](./Covid-19/Data/Korea/covid_dat_kr_region.csv) 
+* [covid_dat_kr_region](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea/covid_dat_kr_region.csv) 
   * Returns regional status of Covid-19 in South Korea.
    ```
       [Increased # of patients compared to day before] | 
@@ -29,18 +29,19 @@ Additionally provides simple visualization of Today's data.
     ```
   * 간단하게: 증가, 환자, 완치, 사망, /10만인구 당 비율
   
-* [covid_dat_kr_total](./Covid-19/Data/Korea/covid_dat_kr_total.csv) 
+* [covid_dat_kr_total](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea/covid_dat_kr_total.csv) 
   * Returns total status of Covid-19 in South Korea.
   * 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
   
-* [covid_dat_seoul](./Covid-19/Data/Korea/covid_dat_seoul.csv) 
+* [covid_dat_seoul](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea/covid_dat_seoul.csv) 
   * Returns Seoul's confirmed cases of Covid-19.
   * 서울 시의 확진자 현황을 보여줍니다
 
-### [World - Covid-19 Daily Statistics](./Covid-19/Data/World)
+### [World - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/World)
 
-* [WorldOMeters](https://www.worldometers.info/coronavirus/#countries) 에서 데이터를 스크래이프 합니다.
-
+* [new_covid_dat.csv](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/World/new_covid_dat.csv)
+  * Stats of Covid19 in Countries world around.
+  * 세계 나라들의 코로나 현황을 
 ## Getting Started
 
 ### Prerequisites
