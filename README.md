@@ -31,17 +31,17 @@ Additionally provides simple visualization of Today's data.
   
 * [covid_dat_kr_total](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea/covid_dat_kr_total.csv) 
   * Returns total status of Covid-19 in South Korea.
-  * 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
+  * 코로나 바이러스의 전체적인 한국 현황을 보.
   
 * [covid_dat_seoul](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea/covid_dat_seoul.csv) 
   * Returns Seoul's confirmed cases of Covid-19.
-  * 서울 시의 확진자 현황을 보여줍니다
+  * 서울 시의 확진자 현황을 보여줘요
 
 ### [World - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/World)
 
 * [new_covid_dat.csv](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/World/new_covid_dat.csv)
   * Stats of Covid19 in Countries world around.
-  * 세계 나라들의 코로나 현황을 
+  * 세계 나라들의 코로나 현황을 보여줘요
 ## Getting Started
 
 ### Prerequisites
