@@ -11,6 +11,12 @@
         'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
       });
       google.charts.setOnLoadCallback(drawRegionsMap);
+      google.charts.load('current', {'packages':['corechart']});
+      
+      
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable)
+      
       // var test = [ 
       //     ['City', 'Patients', 'Area Percentage'],
       //     ['Seoul', 200, 23],
@@ -31,41 +37,66 @@
       //     ['Jeju',123, 23],
       //     ['KR-50',123, 23]   // 세종
       //   ];
-      var array = {{ array|safe }};
-      var array_all = {{ array_all|safe }};
+      
+      
+      
+      function drawTable() {
+        var array_all = {{ array_all|safe }};
+        console.log(array_all)
+        var data = google.visualization.arrayToDataTable(array_all);
+        
+        var options_detail = {
+          title : 'Covid19 Status in Korea (#s)',
+          vAxis: {title: 'Numbers'},
+          hAxis: {title: 'Region'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}        
+        };
+        
+        var chart = new google.visualization.Table(document.getElementById('visual_data'));
+        chart.draw(data, options_detail);
+      }
+      
+      
+      
       
       function drawRegionsMap() {
-        var regional_data = google.visualization.arrayToDataTable(array);
-        var regional_data_detail = google.visualization.arrayToDataTable(array_all)
-        var options = {
+        var array = {{ array|safe }};
+        var data = google.visualization.arrayToDataTable(array);
+        
+        var options_geo = {
           region: 'KR',
           resolution: 'provinces',
           displayMode: 'regions',
           colorAxis: {colors: ['green', 'orange', 'red']},
-          backgroundColor: '#81d4fa',
+          backgroundColor: '#81d4fa' || '#fff',
           defaultColor: '#f5f5f5',
           sizeAxis: { minValue: 0, maxValue: 10000 }
         };
         
-        var options_detail = {
-          region:'KR',
-          resolution:'provinces',
-          displayMode: 'auto',
-          colorAxis: {colors: ['blue', 'yellow', 'red']},
-          backgroundColor: '#81d4fa',
-          defaultColor: '#f5f5f5',
-          sizeAxis: { minValue: 0, maxValue: 20 }
-        }
+        var options_combo = {
+          title : 'Covid19 Status in Korea (# of Patients)',
+          vAxis: {title: '# of Patients'},
+          hAxis: {title: 'Region'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}  
+        };
         
-        var chart_regional = new google.visualization.GeoChart(document.getElementById('regions_div'));
-        var chart_data = new google.visualization.GeoChart(document.getElementById('visual_data'))
-        chart_regional.draw(regional_data, options);
-        chart_data.draw(regional_data_detail, options_detail);
+        var geochart = new google.visualization.GeoChart(document.getElementById('region_geo_div'));
+        var combochart = new google.visualization.ComboChart(document.getElementById('region_combo_div')) 
+        geochart.draw(data, options_geo);
+        combochart.draw(data, options_combo);
       }
     </script>
   </head>
   <body>
-    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+    <h1>Map of Korea with Today's stats of Covid19</h1>
+    <p>hover over providences</p>
+    <div id="region_geo_div" style="width: 900px; height: 500px;"></div>
+    <h3>Total Numbers of Regional Patients</h3>
+    <div id="region_combo_div" style="width: 900px; height: 500px;"></div>
+    <h3>Table data of Today's Status of Covid19</h3>
     <div id="visual_data" style="width: 900px; height: 500px;"></div>
+    <p>updated daily</p>
   </body>
 </html>
