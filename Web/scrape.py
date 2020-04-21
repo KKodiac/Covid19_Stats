@@ -30,13 +30,13 @@ class ThrowInfo:
         for cnt, ele in enumerate(datarray):
             try:
                 if(cnt==0):
-                    datarray_chart.append([ele[0],ele[2]])
+                    datarray_chart.append([ele[0],ele[1]])
                 else:
-                    datarray_chart.append([ele[0],int(float(ele[2]))])
+                    datarray_chart.append([ele[0],int(float(ele[1]))])
             except ValueError:
                 if(cnt==0):
-                    datarray_chart.append([ele[0],ele[2]])
+                    datarray_chart.append([ele[0],ele[1]])
                 else:
-                    datarray_chart.append([ele[0],int(str(ele[2]))])
+                    datarray_chart.append([ele[0],int(str(ele[1]))])
         
         return datarray_all, datarray_chart
