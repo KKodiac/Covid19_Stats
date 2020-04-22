@@ -15,6 +15,7 @@ def index():
 def world():
     infortron = ThrowInfo()
     datarry_chart = infortron.parse_data()
+    return render_template('world.html', warray=json.dumps(datarry_chart))
     
 def run():
     app.run(port=8080, debug = True)

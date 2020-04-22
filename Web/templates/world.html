@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+
+      
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable)
+      
+      // var test = [ 
+      //     ['City', 'Patients', 'Area Percentage'],
+      //     ['Seoul', 200, 23],
+      //     ['Busan', 300, 23],
+      //     ['Daegu', 400, 23],
+      //     ['Daejeon', 500, 23],
+      //     ['Gwangju', 600, 23],
+      //     ['Incheon', 700, 23],
+      //     ['Ulsan', 300, 23],
+      //     ['Chungcheongbugdo	',300, 23], // 충북
+      //     ['Chungcheongnamdo	',233, 23], // 충남
+      //     ['Gangwon',222, 23],
+      //     ['Gyeonggi',222, 23],
+      //     ['Gyeongsangbugdo',2222, 23], // 경북
+      //     ['Gyeongsangnamdo',334, 23],  // 경남
+      //     ['Jeonrabugdo',2323, 23], // 전북
+      //     ['Jeonranamdo',123, 23],  // 전남
+      //     ['Jeju',123, 23],
+      //     ['KR-50',123, 23]   // 세종
+      //   ];
+      
+      
+      
+      function drawTable() {
+        var array_all = {{ warray |safe }};
+        console.log(array_all)
+        var data = google.visualization.arrayToDataTable(array_all);
+        
+        var options_detail = {
+          title : 'Covid19 Status in Korea (#s)',
+          vAxis: {title: 'Numbers'},
+          hAxis: {title: 'Region'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}        
+        };
+        
+        var chart = new google.visualization.Table(document.getElementById('visual_data'));
+        chart.draw(data, options_detail);
+      }
+  
+    </script>
+  </head>
+  <body>
+    <h1>World Stats</h1>
+    <p></p>
+    <h3>Table data of Today's Status of Covid19</h3>
+    <div id="visual_data" style="width: 900px; height: 500px;"></div>
+    <p>updated daily</p>
+  </body>
+</html>

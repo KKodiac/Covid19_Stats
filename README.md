@@ -16,7 +16,7 @@ Additionally provides simple visualization of Today's data.
   * Returns regional status of Covid-19 in South Korea.
    ```
       [Increased # of patients compared to day before] | 
-      [Total # of patients] | [Total # of Recovered] | [Total # of Deceased] 
+      [Total # of patients] | [Total # of Deceased] | [Total # of Recovered]
       | [Ratio of Incidence / 100k Population]
     ```
   * Or more simply just: 'increase'	'patient'	'recovered' 'deceased' '/100k pop'
@@ -24,7 +24,7 @@ Additionally provides simple visualization of Today's data.
   * 코로나 바이러스의 지역적 한국 현황을 보여줘요.
    ```
       [전날 대비 환자 증가 수] | 
-      [전체 환자 수] | [전체 완치자 수] | [전체 사망자 수] 
+      [전체 환자 수] | [전체 사망자 수] | [전체 완치자 수]
       | [10만 인구 당 증가율]
     ```
   * 간단하게: 증가, 환자, 완치, 사망, /10만인구 당 비율

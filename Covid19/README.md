@@ -29,7 +29,7 @@ Additionally provides simple visualization of Today's data.
     ```
       [
         [Increased # of patients compared to day before] | [Total # of patients] 
-        | [Total # of Recovered] | [Total # of Deceased] |
+        | [Total # of Deceased] | [Total # of Recovered] |
         [Ratio of Incidence / 100k Population ]
       ]
     ```

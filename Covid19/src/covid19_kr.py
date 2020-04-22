@@ -85,7 +85,7 @@ class CovidInfokr:
         new_values = []
         tmp = ''
         for cnt, data in enumerate(rlist):
-            if((cnt+1)%5==0):
+            if((cnt+1)%6==0):
                 tmp += data
                 new_values.append(tmp)
                 tmp = ''
