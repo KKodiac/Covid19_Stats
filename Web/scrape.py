@@ -20,7 +20,7 @@ class ThrowInfo:
     def parse_data(self):
         fieldnames, fieldvalues = self.csv_data()
         datarray_chart = []
-        keys = ['City', 'Increase from day before', 'Total Patients', 'Total Deceased', 'Total Recovered', 'Increase to Patient Ratio']
+        keys = ['City', 'Increase from day before', 'Total Patients', 'Total Quarantine', 'Total Recovered', 'Total Deceased', 'Increase to Patient Ratio']
         
         datarray = [[datarr[0],*self.unroll_data(datarr[-1])] for datarr in fieldvalues]
         print(f"Current date's status of Covid19:\n{datarray}")

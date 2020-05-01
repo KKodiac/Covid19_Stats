@@ -27,13 +27,28 @@ Additionally provides simple visualization of Today's data.
   * Returns regional status of Covid-19 in South Korea.
   * 코로나 바이러스의 지역적 한국 현황을 보여줍니다.
     ```
+    May Data Set Layout
       [
-        [Increased # of patients compared to day before] | [Total # of patients] 
-        | [Total # of Deceased] | [Total # of Recovered] |
+        [Increased # of patients compared to day before] | 
+        [Total # of patients] | [Total # of Quarantine] | [Total # of Recovered] | [Total # of Deceased] |
+        [Ratio of Incidence / 100k Population]
+      ]
+    
+    April Data Set Layout
+      [
+        [Increased # of patients compared to day before] | 
+        [Total # of patients] | [Total # of Deceased] | [Total # of Recovered] |
+        [Ratio of Incidence / 100k Population ]
+      ]
+      
+    March Data Set Layout
+      [
+        [Increased # of patients compared to day before] |
+        [Total # of patients] | [Total # of Recovered] | [Total # of Deceased] |
         [Ratio of Incidence / 100k Population ]
       ]
     ```
-  * Or more simply just: 'increase'	'patient'	'recovered' 'deceased' '/100k pop'
+  * Or more simply just: 'increase'	'patient' 'under quarantine'	'recovered' 'deceased' '/100k pop'
 
 * [covid_dat_kr_total](./Data/Korea/covid_dat_kr_total.csv) 
   * Returns total status of Covid-19 in South Korea.
