@@ -19,7 +19,7 @@ Additionally provides simple visualization of Today's data.
       [Total # of patients] | [Total # of Quarantine] | [Total # of Recovered] | [Total # of Deceased] |
       [Ratio of Incidence / 100k Population]
     ```
-  * Or more simply just: 'increase'	'patient'	'recovered' 'deceased' '/100k pop'
+   * Or more simply just: 'increase'	'patient'	'quarantine' 'recovered' 'deceased' '/100k pop'
   
   * 코로나 바이러스의 지역적 한국 현황을 보여줘요.
    ```
@@ -27,7 +27,7 @@ Additionally provides simple visualization of Today's data.
       [전체 환자 수] | [전체 격리인원 수] | [전체 완치자 수] | [전체 사망자 수] |
       [10만 인구 당 증가율]
     ```
-  * 간단하게: 증가, 환자, 완치, 사망, /10만인구 당 비율
+  * 간단하게: 증가, 환자, 격리, 완치, 사망, /10만인구 당 비율
   
 * [covid_dat_kr_total](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea/covid_dat_kr_total.csv) 
   * Returns total status of Covid-19 in South Korea.

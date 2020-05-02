@@ -53,7 +53,7 @@ Additionally provides simple visualization of Today's data.
 * [covid_dat_kr_total](./Data/Korea/covid_dat_kr_total.csv) 
   * Returns total status of Covid-19 in South Korea.
   * 코로나 바이러스의 전체적인 한국 현황을 보여줍니다.
-  * 
+  
 * [covid_dat_seoul](./Data/Korea/covid_dat_seoul.csv) 
   * Returns Seoul's confirmed cases of Covid-19.
   * 서울 시의 확진자 현황을 보여줍니다
