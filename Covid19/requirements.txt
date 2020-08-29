@@ -39,7 +39,5 @@ soupsieve==2.0
 starlette==0.13.2
 uritemplate==3.0.1
 urllib3==1.25.8
-uvicorn==0.11.3
-uvloop==0.14.0
 websockets==8.1
 Werkzeug==1.0.0
