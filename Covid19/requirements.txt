@@ -4,7 +4,6 @@ cachetools==4.0.0
 certifi==2019.11.28
 chardet==3.0.4
 click==7.1.1
-dataclasses==0.7
 fastapi==0.52.0
 Flask==1.1.1
 google-api-core==1.16.0
@@ -24,7 +23,6 @@ MarkupSafe==1.1.1
 numpy==1.18.1
 oauthlib==3.1.0
 pandas==1.0.1
-pkg-resources==0.0.0
 protobuf==3.11.3
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
