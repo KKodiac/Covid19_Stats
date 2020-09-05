@@ -75,7 +75,6 @@ python3 main.py
 ```
 
 
-
 ## Built With / 사용된 도구
 
 * [Python3](https://www.python.org/doc)
@@ -88,7 +87,7 @@ python3 main.py
 
 
 * **Sean Hong(홍성민)** 
-* 현재 군인 현역으로 있는 학생이기 때문에 많이 부족합니다. 보완점을 가르쳐주시면 감사하겠습니다!
+* 전역 했어요!
 * Any lacking parts in my code are welcome to any suggestions and criticism.
 
 ## Contributors

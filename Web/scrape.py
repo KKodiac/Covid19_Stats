@@ -8,7 +8,11 @@ class ThrowInfo:
         
     def unroll_data(self, datarr):
         datarr = datarr.split('|')
-        datarr = [int(float(dat)) for dat in datarr]
+        try:
+            datarr = [int(float(dat)) for dat in datarr]
+        except ValueError:
+            dat=0
+            pass
         # confirmed accumulated, increase, patients, recovered , deceased, ratio
         return tuple(datarr)
     
