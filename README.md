@@ -75,7 +75,7 @@ python3 -m pip install -r requirements.txt
 ## Authors
 
 * **Sean Hong(홍성민)** <br />
--현재 군인 현역으로 있는 학생이기 때문에 많이 부족합니다. 보완점을 가르쳐주시면 감사하겠습니다!<br />
+-학생이기 때문에 많이 부족합니다. 보완점을 가르쳐주시면 감사하겠습니다!<br />
 -Any lacking parts in my code are welcome to any suggestions and criticism.<br />
 
 ## Contributors
