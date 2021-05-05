@@ -7,12 +7,12 @@ import Web.web as web
 if __name__ == '__main__':
     covidkr = CovidInfokr() # Korean Stats for Covid-19
     covidkr.run()
-    
+
     covidwd = CovidInfowd() # new World Stats that has more accurate
     covidwd.run()
-    
-    
-    seoul = CovidInfoSeoul()
-    seoul.run()
+
+
+#    seoul = CovidInfoSeoul()
+#    seoul.run()
     web.app.run(port=8080,debug=True)
-    
+

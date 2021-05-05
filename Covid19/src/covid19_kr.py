@@ -28,25 +28,25 @@ class CovidInfokr:
         self.data_regional = f'./Covid19/Data/Korea/covid_dat_kr_region.csv'
         self.data_country_kr = f'./Covid19/Data/Korea/covid_dat_kr_total.csv'
         self.date = ctime(time())
-        
-        
+
+
     def is_updated(self):
         with open(self.data_country_kr) as file:
             cur_dat = file.readlines()[-1].split(',')[-1][:10]
             file.close()
-        
+
         return (cur_dat==self.date[:10])
-    
+
     def return_kr_dat(self):
         try:
             regional_stat = requests.get(self.kcdc_main)
             detail_stat = requests.get(self.kcdc)
         except (requests.exceptions.HTTPError,requests.exceptions.Timeout):
             exit()
-        
+
         return regional_stat, detail_stat
-    
-    
+
+
     def read_csv_data(self):
         with open(self.data_regional) as rfile:
             fieldvalues = []
@@ -55,14 +55,14 @@ class CovidInfokr:
             fieldnames.append(self.date)
             for line in reader:
                 fieldvalues.append(line)
-            
-            rfile.close() 
-            
+
+            rfile.close()
+
         return fieldnames, fieldvalues
-        
+
     def crawl_regional_data(self,rg):
         soup = bs4(rg.content, 'html.parser')
-        
+
         rlist = []
         for i in range(18):
             data_html = soup.find(class_="rpsa_detail").find(id="map_city"+str(i+1)).find('ul')
@@ -70,16 +70,16 @@ class CovidInfokr:
             tincr = ''.join(e for e in incr if e.isalnum())
             rlist.append(tincr)
             for cnt,i in enumerate(data_html.find_all(class_="num")):
-                
+
                 tincr = ''.join(e for e in i.text if (e.isalnum() or (e=='.')))
                 rlist.append(tincr)
-            
+
         return rlist
-        
+
     def get_regional_data(self, rg):
         fieldnames, fieldvalues = self.read_csv_data()
         # list inside list
-        rlist = self.crawl_regional_data(rg) 
+        rlist = self.crawl_regional_data(rg)
         # 서울, 부산, 대구, 인천, 광주, 대전, 울산, 세종, 경기, 강원, 충북, 충남, 전북, 전남, 경북, 경남, 제주, 검역
         # every 5 element is a data for a region
         new_values = []
@@ -91,8 +91,8 @@ class CovidInfokr:
                 tmp = ''
             else:
                 tmp += (data + '|')
-              
-                
+
+
         with open(self.data_regional, 'w+') as file:
             df = csv.writer(file)
             df.writerow(fieldnames)
@@ -100,8 +100,8 @@ class CovidInfokr:
                 value.append(new_values[cnt])
                 df.writerow(value)
             file.close()
-            
-            
+
+
     def get_country_data(self, dt):
         keys = [
             'patient',
@@ -114,32 +114,32 @@ class CovidInfokr:
             'test_total',
             'date'
             ]
-            
+
         soup = bs4(dt.text, 'html.parser')
         temp = soup.find(class_='minisize').find_all('td')
         status = [data.text for data in temp]
         status.append(ctime(time()))
-        
+
         if(path.isfile(self.data_country_kr)==False):
             with open(self.data_country_kr, 'w+') as file:
                 df = csv.writer(file)
                 df.writerow(keys)
                 file.close()
-                
+
         with open(self.data_country_kr, 'a+') as file:
             df = csv.writer(file)
             df.writerow(status)
             file.close()
-            
-            
+
+
     def run(self):
         if(self.is_updated()):
             print("Korea files have been updated Today")
             return
-        
+
         rg, dt = self.return_kr_dat()
         self.get_regional_data(rg)
         self.get_country_data(dt)
-        
+
 
 
