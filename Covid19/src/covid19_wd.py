@@ -14,7 +14,7 @@ class CovidInfowd:
         self.is_updated = path.isfile(self.appendfile)
 
 
-    def getData(self):
+    def getData(self) -> list, list:
         page = requests.get(self.scrape_url)
         html = bs4(page.text, 'html.parser')
         table = html.find(id="main_table_countries_today")
@@ -49,7 +49,7 @@ class CovidInfowd:
                 appendfile = open(self.appendfile, 'w+')
                 copyfile(self.datafile, self.appendfile)
 
-    def run(self):
+    def run(self) -> None:
         if(self.is_updated):
             print("World file has been updated Today")
             return

@@ -30,21 +30,21 @@ class CovidInfokr:
         self.date = ctime(time())
 
 
-    def is_updated(self):
+    def is_updated(self) -> bool:
         with open(self.data_country_kr) as file:
             cur_dat = file.readlines()[-1].split(',')[-1][:10]
             file.close()
 
         return (cur_dat==self.date[:10])
 
-    def return_kr_dat(self):
+    def return_kr_dat(self) -> str, str:
         try:
             regional_stat = requests.get(self.kcdc_main)
             detail_stat = requests.get(self.kcdc)
         except (requests.exceptions.HTTPError,requests.exceptions.Timeout):
-            exit()
+            exit(0)
 
-        return regional_stat, detail_stat
+        return regional_stat.text, detail_stat.text
 
 
     def read_csv_data(self):
@@ -60,8 +60,8 @@ class CovidInfokr:
 
         return fieldnames, fieldvalues
 
-    def crawl_regional_data(self,rg):
-        soup = bs4(rg.content, 'html.parser')
+    def crawl_regional_data(self,rg : str) -> list:
+        soup = bs4(rg, 'html.parser')
 
         rlist = []
         for i in range(18):
@@ -76,7 +76,7 @@ class CovidInfokr:
 
         return rlist
 
-    def get_regional_data(self, rg):
+    def get_regional_data(self, rg : str):
         fieldnames, fieldvalues = self.read_csv_data()
         # list inside list
         rlist = self.crawl_regional_data(rg)

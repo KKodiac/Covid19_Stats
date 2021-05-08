@@ -6,7 +6,7 @@ class ThrowInfo:
         self.infotron = CovidInfokr()
         self.wdinfotron = CovidInfowd()
         
-    def unroll_data(self, datarr):
+    def unroll_data(self, datarr : list) -> tuple:
         datarr = datarr.split('|')
         try:
             datarr = [int(float(dat)) for dat in datarr]
@@ -21,7 +21,7 @@ class ThrowInfo:
         return fieldnames, fieldvalues
         
         
-    def parse_data(self):
+    def parse_data(self) -> list, list:
         fieldnames, fieldvalues = self.csv_data()
         datarray_chart = []
         keys = [
