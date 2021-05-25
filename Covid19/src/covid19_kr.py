@@ -37,7 +37,7 @@ class CovidInfokr:
 
         return (cur_dat==self.date[:10])
 
-    def return_kr_dat(self) -> str, str:
+    def return_kr_dat(self):
         try:
             regional_stat = requests.get(self.kcdc_main)
             detail_stat = requests.get(self.kcdc)
@@ -140,6 +140,5 @@ class CovidInfokr:
         rg, dt = self.return_kr_dat()
         self.get_regional_data(rg)
         self.get_country_data(dt)
-
 
 
