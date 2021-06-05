@@ -1,6 +1,5 @@
-from src.KoreaCDC import KoreaCovid
-from src.WorldCDC import WorldCovid
-
+from .src.KoreaCDC import KoreaCovid
+from .src.WorldCDC import WorldCovid
 koreacovid = KoreaCovid()
 worldcovid = WorldCovid()
 
@@ -19,8 +18,8 @@ def csv_data():
     return fieldnames, fieldvalues
     
     
-def parse_data() -> list, list:
-    fieldnames, fieldvalues = self.csv_data()
+def parse_data():
+    fieldnames, fieldvalues = csv_data()
     datarray_chart = []
     keys = [
         'City', 
@@ -32,7 +31,7 @@ def parse_data() -> list, list:
         'Increase to Patient Ratio'
     ]
     
-    datarray = [[datarr[0],*self.unroll_data(datarr[-1])] for datarr in fieldvalues]
+    datarray = [[datarr[0],*unroll_data(datarr[-1])] for datarr in fieldvalues]
     print(f"Current date's status of Covid19:\n{datarray}")
     datarray.insert(0,keys)
     datarray_all = datarray

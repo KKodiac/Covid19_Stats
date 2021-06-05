@@ -1,0 +1,148 @@
+"Country,Other",TotalCases,NewCases,TotalDeaths,NewDeaths,TotalRecovered,ActiveCases,"Serious,Critical",Tot Cases/1M pop
+China,"80,824",+11,"3,189",+13,"65,564","12,071","4,020",56.2
+Italy,"17,660",,"1,266",,"1,439","14,955","1,328",292.1
+Iran,"11,364",,514,,"3,529","7,321",,135.3
+S. Korea,"8,086",+107,72,+5,714,"7,300",59,157.7
+Spain,"5,232",,133,,193,"4,906",272,111.9
+Germany,"3,675",,8,,46,"3,621",9,43.9
+France,"3,661",,79,,12,"3,570",154,56.1
+USA,"2,329",+82,50,+1,41,"2,238",10,7.0
+Switzerland,"1,139",,11,,4,"1,124",,131.6
+Norway,996,,1,,1,994,27,183.7
+Sweden,821,+7,1,,1,819,2,81.3
+Netherlands,804,,10,,2,792,45,46.9
+Denmark,804,,,,1,803,2,138.8
+UK,798,,11,,18,769,20,11.8
+Japan,738,+4,21,,118,599,29,5.8
+Diamond Princess,696,,7,,325,364,32,
+Austria,602,+98,1,,6,595,1,66.8
+Belgium,559,,3,,1,555,2,48.2
+Qatar,320,,,,,320,,111.1
+Bahrain,210,,,,44,166,1,123.4
+Canada,200,+2,1,,11,188,1,5.3
+Singapore,200,,,,97,103,11,34.2
+Australia,199,,3,,26,170,1,7.8
+Malaysia,197,,,,32,165,4,6.1
+Greece,190,,1,,2,187,2,18.2
+Finland,156,+1,,,1,155,,28.2
+Brazil,151,,,,1,150,2,0.7
+Czechia,150,+9,,,,150,2,14.0
+Israel,143,,,,4,139,3,16.5
+Slovenia,141,,,,,141,4,67.8
+Hong Kong,138,+6,4,,78,56,4,18.4
+Iceland,138,+4,,,,138,,
+Portugal,112,,,,1,111,1,11.0
+Iraq,101,,9,,24,68,,2.5
+Kuwait,100,,,,5,95,4,23.4
+Romania,95,,,,7,88,1,4.9
+Egypt,93,,2,,27,64,,0.9
+Ireland,90,,1,,,89,6,18.2
+Saudi Arabia,86,,,,1,85,,2.5
+UAE,85,,,,20,65,2,8.6
+Lebanon,83,+6,3,,1,79,3,12.2
+India,83,+1,2,,10,71,,0.1
+San Marino,80,,5,,2,73,3,
+Estonia,79,,,,,79,,59.6
+Thailand,75,,1,,35,39,1,1.1
+Indonesia,69,,4,,5,60,,0.3
+Poland,68,,2,,,66,3,1.8
+Philippines,64,,8,+3,2,54,1,0.6
+Taiwan,53,+3,1,,20,32,,2.2
+Vietnam,49,+5,,,16,33,,0.5
+Russia,45,,,,8,37,,0.3
+Chile,43,,,,,43,,2.2
+Serbia,41,+6,,,,41,1,4.7
+Luxembourg,38,,1,,,37,,
+Peru,38,,,,,38,,1.2
+Croatia,37,+5,,,1,36,,9.0
+Brunei,37,,,,,37,,
+Panama,36,+9,1,,,35,,8.3
+Palestine,35,,,,,35,,6.9
+Argentina,34,,2,,,32,1,0.8
+Albania,33,,1,,,32,,11.5
+Slovakia,32,,,,,32,,5.9
+Bulgaria,31,,1,,,30,,4.5
+Georgia,30,+5,,,,30,1,7.5
+Pakistan,28,,,,2,26,,0.1
+Belarus,27,,,,3,24,,2.9
+Algeria,26,,2,,10,14,,0.6
+Ecuador,26,+3,1,,,25,1,1.5
+Costa Rica,26,+3,,,,26,1,5.1
+Hungary,25,+6,,,1,24,,2.6
+South Africa,24,,,,,24,,0.4
+Senegal,21,,,,2,19,,1.3
+Oman,19,,,,9,10,,3.7
+Bosnia and Herzegovina,18,,,,,18,,5.5
+Latvia,17,,,,1,16,,9.0
+Tunisia,16,,,,,16,2,1.4
+Colombia,16,,,,,16,,0.3
+Azerbaijan,15,,1,,3,11,,1.5
+Mexico,15,,,,4,11,1,0.1
+North Macedonia,14,,,,1,13,,6.7
+Cyprus,14,,,,,14,,11.6
+Armenia,13,+5,,,,13,,4.4
+Malta,13,+1,,,1,12,,
+Afghanistan,10,+3,,,,10,,0.3
+Macao,10,,,,10,0,,
+Bolivia,10,,,,,10,,0.9
+Maldives,9,,,,,9,,
+Morocco,8,+1,1,,1,6,1,0.2
+Jamaica,8,,,,,8,,2.7
+Cambodia,7,,,,1,6,,0.4
+Lithuania,6,,,,,6,,2.2
+New Zealand,6,,,,,6,,1.2
+Sri Lanka,6,,,,1,5,,0.3
+French Guiana,6,,,,,6,,
+Kazakhstan,6,+2,,,,6,,0.3
+Martinique,6,+3,,,,6,,
+Moldova,6,,,,,6,,1.5
+Paraguay,6,,,,,6,1,0.8
+Dominican Republic,5,,,,,5,,0.5
+Réunion,5,,,,,5,,
+Turkey,5,,,,,5,,0.1
+Cuba,4,,,,,4,,0.4
+Liechtenstein,4,,,,,4,,
+Uruguay,4,,,,,4,,1.2
+Ukraine,3,,1,,,2,,0.1
+Bangladesh,3,,,,2,1,,
+Channel Islands,3,,,,,3,,
+Faeroe Islands,3,,,,,3,,
+French Polynesia,3,,,,,3,,
+Puerto Rico,3,,,,,3,,1.0
+Monaco,2,,,,,2,,
+Nigeria,2,,,,,2,,
+Aruba,2,,,,,2,,
+Burkina Faso,2,,,,,2,,0.1
+Cameroon,2,,,,,2,,0.1
+DRC,2,,,,,2,,
+Ghana,2,,,,,2,,0.1
+Honduras,2,,,,,2,,0.2
+Saint Martin,2,,,,,2,,
+Venezuela,2,,,,,2,,0.1
+Guyana,1,,1,,,0,,
+Sudan,1,,1,,,0,,
+Andorra,1,,,,,1,,
+Jordan,1,,,,1,0,,0.1
+Nepal,1,,,,1,0,,
+Antigua and Barbuda,1,,,,,1,,
+Bhutan,1,,,,,1,,
+Cayman Islands,1,,,,,1,,
+Ivory Coast,1,,,,,1,,
+Curaçao,1,,,,,1,,
+Ethiopia,1,,,,,1,,
+Gabon,1,,,,,1,,0.4
+Gibraltar,1,,,,1,0,,
+Guadeloupe,1,,,,,1,,
+Guatemala,1,,,,,1,,0.1
+Guinea,1,,,,,1,,0.1
+Vatican City,1,,,,,1,,
+Kenya,1,,,,,1,,
+Mauritania,1,,,,,1,,0.2
+Mongolia,1,,,,,1,,0.3
+St. Barth,1,,,,,1,,
+Saint Lucia,1,,,,,1,,
+St. Vincent Grenadines,1,,,,,1,,
+Suriname,1,,,,,1,,
+Togo,1,,,,,1,,0.1
+Trinidad and Tobago,1,,,,,1,,0.7
+
