@@ -6,12 +6,12 @@ bs4==0.0.1
 certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
-Django==3.1.7
+Django>=3.1.9
 Flask==1.1.2
 idna==2.10
 iniconfig==1.1.1
 itsdangerous==1.1.0
-Jinja2==2.11.2
+jinja2>=2.11.3
 koco==0.2.3
 MarkupSafe==1.1.1
 numpy==1.19.5
@@ -30,6 +30,6 @@ six==1.15.0
 soupsieve==2.1
 sqlparse==0.4.1
 toml==0.10.2
-urllib3==1.26.3
+urllib3>=1.26.5
 Werkzeug==1.0.1
 wget==3.2
