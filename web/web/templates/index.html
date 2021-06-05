@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        // Note: you will need to get a mapsApiKey for your project.
+        // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
+        'mapsApiKey': ''
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+      google.charts.load('current', {'packages':['corechart']});
+      
+      
+      google.charts.load('current', {'packages':['table']});
+      google.charts.setOnLoadCallback(drawTable)
+      
+      // var test = [ 
+      //     ['City', 'Patients', 'Area Percentage'],
+      //     ['Seoul', 200, 23],
+      //     ['Busan', 300, 23],
+      //     ['Daegu', 400, 23],
+      //     ['Daejeon', 500, 23],
+      //     ['Gwangju', 600, 23],
+      //     ['Incheon', 700, 23],
+      //     ['Ulsan', 300, 23],
+      //     ['Chungcheongbugdo	',300, 23], // 충북
+      //     ['Chungcheongnamdo	',233, 23], // 충남
+      //     ['Gangwon',222, 23],
+      //     ['Gyeonggi',222, 23],
+      //     ['Gyeongsangbugdo',2222, 23], // 경북
+      //     ['Gyeongsangnamdo',334, 23],  // 경남
+      //     ['Jeonrabugdo',2323, 23], // 전북
+      //     ['Jeonranamdo',123, 23],  // 전남
+      //     ['Jeju',123, 23],
+      //     ['KR-50',123, 23]   // 세종
+      //   ];
+      
+      
+      
+      function drawTable() {
+        var array_all = {{ array_all|safe }};
+        console.log(array_all)
+        var data = google.visualization.arrayToDataTable(array_all);
+        
+        var options_detail = {
+          title : 'Covid19 Status in Korea (#s)',
+          vAxis: {title: 'Numbers'},
+          hAxis: {title: 'Region'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}        
+        };
+        
+        var chart = new google.visualization.Table(document.getElementById('visual_data'));
+        chart.draw(data, options_detail);
+      }
+      
+      
+      
+      
+      function drawRegionsMap() {
+        var array = {{ array|safe }};
+        var data = google.visualization.arrayToDataTable(array);
+        
+        var options_geo = {
+          region: 'KR',
+          resolution: 'provinces',
+          displayMode: 'regions',
+          colorAxis: {colors: ['green', 'orange', 'red']},
+          backgroundColor: '#81d4fa' || '#fff',
+          defaultColor: '#f5f5f5',
+          sizeAxis: { minValue: 0, maxValue: 10000 }
+        };
+        
+        var options_combo = {
+          title : 'Covid19 Status in Korea (# of Patients)',
+          vAxis: {title: '# of Patients'},
+          hAxis: {title: 'Region'},
+          seriesType: 'bars',
+          series: {5: {type: 'line'}}  
+        };
+        
+        var geochart = new google.visualization.GeoChart(document.getElementById('region_geo_div'));
+        var combochart = new google.visualization.ComboChart(document.getElementById('region_combo_div')) 
+        geochart.draw(data, options_geo);
+        combochart.draw(data, options_combo);
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+    <h1>Map of Korea with Today's stats of Covid19</h1>
+    <p>hover over providences</p>
+    <div id="region_geo_div" style="width: 900px; height: 500px;"></div>
+    <h3>Total Numbers of Regional Patients</h3>
+    <div id="region_combo_div" style="width: 900px; height: 500px;"></div>
+    <h3>Table data of Today's Status of Covid19</h3>
+    <div id="visual_data" style="width: 1000px; height: 500px;"></div>
+    <p>updated daily</p>
+    </center>
+  </body>
+</html>
