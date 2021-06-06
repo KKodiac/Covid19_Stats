@@ -24,8 +24,8 @@ class KoreaCovid:
     def __init__(self):
         self.kcdc_main = "http://ncov.mohw.go.kr/"
         self.kcdc = "http://ncov.mohw.go.kr/bdBoardList_Real.do?"
-        self.data_regional = f'web/map/src/data/Korea/covid_dat_kr_region.csv'
-        self.data_korea = f'web/map/src/data/Korea/covid_dat_kr_total.csv'
+        self.data_regional = f'map/src/data/Korea/covid_dat_kr_region.csv'
+        self.data_korea = f'map/src/data/Korea/covid_dat_kr_total.csv'
         self.date = ctime(time())
 
 

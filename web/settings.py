@@ -28,7 +28,7 @@ SECRET_KEY = '10l7!pzk7e1gje9)3@is5%%*9(4%kv$-ghg==776y7pue)q(xu'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['covidstatsweb.herokuapp.com', '0.0.0.0']
+ALLOWED_HOSTS = ['covidstatsweb.herokuapp.com', '0.0.0.0', '127.0.0.1']
 
 
 # Application definition
@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'web.map',
+    'map',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
-ROOT_URLCONF = 'web.web.urls'
+ROOT_URLCONF = 'web.urls'
 
 TEMPLATES = [
     {
@@ -72,7 +72,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'web.web.wsgi.application'
+WSGI_APPLICATION = 'web.wsgi.application'
 
 
 # Database

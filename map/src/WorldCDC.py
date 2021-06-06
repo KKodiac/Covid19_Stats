@@ -9,8 +9,8 @@ class WorldCovid:
     def __init__(self):
         self.today = ctime(time())
         self.scrape_url = "https://www.worldometers.info/coronavirus/"
-        self.datafile = f"web/map/src/data/World/new_covid_dat.csv"
-        self.appendfile = f"web/map/src/data/World/world_timeseries/{self.today[4:10]+self.today[-5:]}.csv"
+        self.datafile = f"map/src/data/World/new_covid_dat.csv"
+        self.appendfile = f"map/src/data/World/world_timeseries/{self.today[4:10]+self.today[-5:]}.csv"
         self.is_updated = path.isfile(self.appendfile)
 
 
