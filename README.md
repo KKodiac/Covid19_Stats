@@ -1,4 +1,4 @@
-# `COVID-19 Stats and Visualizations`
+# COVID-19 Stats and Visualizations
 코로나-19 에 대한 확진/완치/사망 에 대한 국내, 해외 정보를 수집합니다. <br />
 추가적으로 매일 데이터에 대한 시각적 자료 또한 간단하게 제공합니다. <br />
 Data scrapes Covid-19 Confirmed/Cured/Deceases Cases. <br />
@@ -11,7 +11,7 @@ Additionally provides simple visualization of Today's data.
 * Time recording is based on UTC (+0900 for KST) 
 * 자료 파일의 시간은 UTC 기준입니다.(UTC+0900가 한국기준시에용.)
 
-### [Korea - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea)
+### Korea - Covid-19 Daily Statistics
 
 * [covid_dat_kr_region](https://github.com/KKodiac/Covid19_Stats/tree/master/map/src/data/Korea/covid_dat_kr_region.csv) 
   * Returns regional status of Covid-19 in South Korea.
