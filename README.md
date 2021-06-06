@@ -6,13 +6,14 @@ Additionally provides simple visualization of Today's data.
 
 
 ## Contents 
-
+* [그냥 Heroku가 뭔지 알아보려고 만들어본 웹](https://covidstatsweb.herokuapp.com/map/korea)
+  - 여기서 업데이트 자동화 구현해보기(웹에서 자동으로 끌어와서 깃헙 푸쉬까지)
 * Time recording is based on UTC (+0900 for KST) 
 * 자료 파일의 시간은 UTC 기준입니다.(UTC+0900가 한국기준시에용.)
 
 ### [Korea - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea)
 
-* [covid_dat_kr_region](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea/covid_dat_kr_region.csv) 
+* [covid_dat_kr_region](https://github.com/KKodiac/Covid19_Stats/tree/master/map/src/data/Korea/covid_dat_kr_region.csv) 
   * Returns regional status of Covid-19 in South Korea.
    ```
       [Increased # of patients compared to day before] | 
@@ -29,48 +30,27 @@ Additionally provides simple visualization of Today's data.
     ```
   * 간단하게: 증가, 환자, 격리, 완치, 사망, /10만인구 당 비율
   
-* [covid_dat_kr_total](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea/covid_dat_kr_total.csv) 
+* [covid_dat_kr_total](https://github.com/KKodiac/Covid19_Stats/tree/master/map/src/data/Korea/covid_dat_kr_total.csv) 
   * Returns total status of Covid-19 in South Korea.
   * 코로나 바이러스의 전체적인 한국 현황을 보.
   
-* [covid_dat_seoul](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/Korea/covid_dat_seoul.csv) 
+* [covid_dat_seoul](https://github.com/KKodiac/Covid19_Stats/tree/master/map/src/data/Korea/covid_dat_seoul.csv) 
   * Returns Seoul's confirmed cases of Covid-19.
   * 서울 시의 확진자 현황을 보여줘요
 
-### [World - Covid-19 Daily Statistics](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/World)
+### World - Covid-19 Daily Statistics
 
-* [new_covid_dat.csv](https://github.com/KKodiac/Covid19_Stats/tree/master/Covid19/Data/World/new_covid_dat.csv)
+* [new_covid_dat.csv](https://github.com/KKodiac/Covid19_Stats/blob/master/map/src/data/World/new_covid_dat.csv)
   * Stats of Covid19 in Countries world around.
   * 세계 나라들의 코로나 현황을 보여줘요
-## Getting Started
 
-### Prerequisites
-Create a virtual environment.<br />
-파이썬 가상환경을 만들어주세요.<br />
-```
-python3 -m venv .covid
-```
-Install modules in `requirements.txt`.<br /><br />
-`requirements.txt` 에 있는 파이썬 모듈을 다운 받아주세요.<br />
-```
-python3 -m pip install -r requirements.txt
-```
-* For Visualization of Korean Regional dataset / 한국 지역별 시각화 데이터를 위해서는
-  * Just run the main.py / 그냥 아래 명령 실행하면 돼요!
-    ```
-     python3 main.py
-     
-     # This runs a simple Flask app on `localhost:8080/`
-     # Checkout what's on there
-     # 간단한 Flask 를 만들어서 `localhost:8080/` 에 실행해요
-     # 거기에 있는 걸 확인해주세요!
-    ```
 ## Built With / 사용된 도구
 * [Python3](https://www.python.org/doc)<br />
   * [BeautifulSoup4](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) <br />
   * [Requests](https://requests.readthedocs.io/en/master/)<br />
   * [pandas](https://pandas.pydata.org/pandas-docs/stable/reference/frame.html)
 * [Google Charts API](https://developers.google.com/chart)
+* [Heroku](https://covidstatsweb.herokuapp.com/map/korea)
 
 ## Authors
 
